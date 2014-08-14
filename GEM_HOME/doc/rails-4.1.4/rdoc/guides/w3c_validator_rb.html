@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>File: w3c_validator.rb [rails-4.1.4 Documentation]</title>
+
+  <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet" />
+
+  <script src="../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2014-08-11 15:07:13 -0600</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+          <li>w3c_validators</li>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      <hr style="height: 10px">
+
+<p>This script validates the generated guides against the W3C Validator.</p>
+
+<p>Guides are taken from the output directory, from where all .html files are
+submitted to the validator.</p>
+
+<p>This script is prepared to be launched from the guides directory as a rake
+task:</p>
+
+<p>rake guides:validate</p>
+
+<p>If nothing is specified, all files will be validated, but you can check
+just some of them using this environment variable:</p>
+
+<pre>ONLY
+  Use ONLY if you want to validate only one or a set of guides. Prefixes are
+  enough:
+
+    # validates only association_basics.html
+    rake guides:validate ONLY=assoc
+
+  Separate many using commas:
+
+    # validates only association_basics.html and migrations.html
+    rake guides:validate ONLY=assoc,migrations</pre>
+<hr style="height: 10px">
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

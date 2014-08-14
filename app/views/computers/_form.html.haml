@@ -1,0 +1,22 @@
+= simple_form_for @computer, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Print Station
+        = f.input :print_station_id, collection: PrintStation.all, label_method: :location, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Service Tag
+        = f.input :service_tag, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Model
+        = f.input :computer_model_id, collection: ComputerModel.all, label_method: :model, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Image Date
+        = f.input :computer_image_id, collection: ComputerImage.all, label_method: :image, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label VGA/DVI
+        = f.input :vga_dvi, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', computers_path, class: 'btn btn-primary'

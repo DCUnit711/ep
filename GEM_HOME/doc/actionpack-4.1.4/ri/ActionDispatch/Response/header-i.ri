@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"header:EFI"$ActionDispatch::Response#header;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"+Get and set headers for this response.:encoding"IBM437:
+@file0FI")lib/action_dispatch/http/response.rb;@

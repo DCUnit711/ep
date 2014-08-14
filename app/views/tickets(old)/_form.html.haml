@@ -1,0 +1,13 @@
+= simple_form_for @ticket, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Created by:
+        = f.input :created_employee_id, collection: Employee.all, label_method: :name, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Received Method:
+        = f.input :issue_received_method_id, collection: IssueReceivedMethod.all, label_method: :method, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', tickets_path, class: 'btn btn-primary'

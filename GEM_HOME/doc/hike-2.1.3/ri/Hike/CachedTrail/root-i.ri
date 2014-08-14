@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	root:EFI"Hike::CachedTrail#root;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"U`CachedTrail#root` returns root path as a `String`. This attribute is immutable.:encoding"IBM437:
+@file0FI"lib/hike/cached_trail.rb;@

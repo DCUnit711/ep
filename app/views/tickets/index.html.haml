@@ -1,0 +1,22 @@
+.row
+  .col-md-2
+    %h1 
+      Tickets
+  .col-md-3
+    %h3
+      .list-group-item.list-group-item-success
+        Resolved Ticket
+  .col-md-3
+    %h3
+      .list-group-item.list-group-item-danger
+        Open Ticket
+  .col-md-4
+    %h3
+      .list-group-item.list-group-item-warning
+        Ticket w/ no issues added
+
+.row
+  %br
+  =render 'open_tickets'
+  %br
+  =render 'resolved_tickets'

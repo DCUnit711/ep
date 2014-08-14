@@ -1,0 +1,34 @@
+= simple_form_for @printer_model, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Model
+        = f.input :model, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Service Code
+        = f.input :service_code, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Black
+        = f.input :black, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Cyan
+        = f.input :cyan, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Magenta
+        = f.input :magenta, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Fuser
+        = f.input :fuser, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Maint Kit
+        = f.input :maint_kit, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Transfer Kit
+        = f.input :transfer_kit, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Collection Unit
+        = f.input :collection_unit, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', printer_models_path, class: 'btn btn-primary'

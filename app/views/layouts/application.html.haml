@@ -1,0 +1,15 @@
+%html
+  %head
+    %title Express Print
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = favicon_link_tag "favicon.ico"
+    = csrf_meta_tags
+    %body
+    .navbar.navbar-inverse.navbar-fixed-top.hidden-xs
+      = render "layouts/navbar"
+    .navbar.navbar-inverse.navbar-top.visible-xs
+      = render "layouts/navbar"
+    .container
+      = render "layouts/messages"
+      = yield

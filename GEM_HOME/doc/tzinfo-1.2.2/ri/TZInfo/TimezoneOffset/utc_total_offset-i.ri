@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"utc_total_offset:EFI",TZInfo::TimezoneOffset#utc_total_offset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=The total offset of this observance from UTC in seconds :encoding"IBM437I"(utc_offset + std_offset).;@:
+@file0FI""lib/tzinfo/timezone_offset.rb;@

@@ -1,0 +1,12 @@
+= simple_form_for [@commentable, @comment], defaults:{ label:false } do |f|
+  .row
+    .col-lg-3
+      %h3 Add Comment
+      .form-group
+        %label.control-label Comment
+        = f.input :content, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Employee
+        = f.input :employee_id, collection: Employee.all, label_method: :name, input_html:{class: 'form-control'}
+      .btn-group
+        = f.button :submit, 'Add', class: 'btn btn-primary'

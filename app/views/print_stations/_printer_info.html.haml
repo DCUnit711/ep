@@ -1,0 +1,29 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Printer
+  - @print_station.ps_connection_informations.each do |ps_info|
+    - if ps_info.printer
+      %table.table.table-condensed.table-striped.table-hover
+        %tbody{style: 'font-size:14px'}
+          %tr{style: 'font-size:16px'}
+            %th Serial Number:
+            %td= link_to ps_info.printer.serial_number, printer_path(ps_info.printer)
+          %tr
+            %th B&W / Color:
+            %td= nice_color ps_info.printer.color_bw
+          %tr
+            %th Model:
+            %td= link_to ps_info.printer.printer_model.model, printer_model_path(ps_info.printer.printer_model_id)
+          %tr
+            %th IP Address:
+            %td= link_to ps_info.ip_address, ps_connection_information_path(ps_info)
+          %tr
+            %th Jack:
+            %td= ps_info.jack
+      - if @print_station.ps_connection_informations.count > 1
+        %br
+    - else
+      .well.well-sm
+        %strong
+          No Printer Assigned IP Address
+          = link_to ps_info.ip_address, ps_connection_information_path(ps_info)

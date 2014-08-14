@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"abbreviation:EFI"(TZInfo::TimezoneOffset#abbreviation;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BThe abbreviation that identifies this observance, e.g. "GMT" :encoding"IBM437I"l(Greenwich Mean Time) or "BST" (British Summer Time) for "Europe/London". The returned identifier is a ;@I"symbol.;@:
+@file0FI""lib/tzinfo/timezone_offset.rb;@

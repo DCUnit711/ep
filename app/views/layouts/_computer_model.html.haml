@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Model
+      %th
+  %tbody
+    - @computer_models.each do |computer_model|
+      %tr
+        %td= computer_model.model
+        %td
+          = link_to edit_computer_model_path(computer_model), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to computer_model, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

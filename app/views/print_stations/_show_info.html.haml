@@ -1,0 +1,58 @@
+.panel{class: check_status(@print_station.status.status)}
+  .panel-heading
+    %h4
+      #{ @print_station.location }
+      .pull-right= @print_station.status.status
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Location ID:
+        %td= @print_station.location_id
+      %tr
+        %th Building:
+        %td= @print_station.building
+      %tr
+        %th Room number:
+        %td= @print_station.room_number
+      %tr
+        %th Our Printer Jack:
+        %td
+          %span{class: is_there(@print_station.printer_our_jack)}
+      %tr
+        %th Our Computer Jack:
+        %td
+          %span{class: is_there(@print_station.computer_our_jack)}
+      %tr
+        %th Computer Jack Number:
+        %td= @print_station.computer_jack
+      %tr
+        %th Strapped down:
+        %td
+          %span{class: is_there(@print_station.strapped_down)}
+      %tr
+        %th Restricted Access:
+        %td
+          %span{class: is_there(@print_station.restricted_access)}
+      - if @print_station.restricted_access
+        %tr
+          %th Key Code:
+          %td= @print_station.key_code
+      %tr
+        %th Keyboard:
+        %td
+          %span{class: is_there(@print_station.keyboard)}
+      %tr
+        %th Mouse:
+        %td
+          %span{class: is_there(@print_station.mouse)}
+      %tr
+        %th Touchpad:
+        %td
+          %span{class: is_there(@print_station.touchpad)}
+      %tr
+        %th Monitor:
+        - if @print_station.monitor == ""
+          %td
+            %strong needs to be recorded
+        - else
+          %td= @print_station.monitor

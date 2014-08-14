@@ -1,0 +1,32 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Model
+      %th Service code
+      %th Black
+      %th Cyan
+      %th Magenta
+      %th Yellow
+      %th Fuser
+      %th Maint kit
+      %th Transfer kit
+      %th Collection unit
+      %th
+  %tbody
+    - @printer_models.each do |printer_model|
+      %tr
+        %td= link_to printer_model.model, printer_model_path(printer_model)
+        %td= printer_model.service_code
+        %td= printer_model.black
+        %td= printer_model.cyan
+        %td= printer_model.magenta
+        %td= printer_model.yellow
+        %td= printer_model.fuser
+        %td= printer_model.maint_kit
+        %td= printer_model.transfer_kit
+        %td= printer_model.collection_unit
+        %td
+          = link_to edit_printer_model_path(printer_model), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to printer_model, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

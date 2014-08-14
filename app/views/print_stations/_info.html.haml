@@ -1,0 +1,16 @@
+.row
+  .col-md-8
+    .btn-group
+      = link_to print_stations_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_print_station_path(@print_station), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+%hr
+.row
+  .col-lg-4
+    = render 'show_info'
+  .col-lg-4
+    = render 'printer_info'
+    = render 'computer_info'
+  .col-lg-4
+    = render 'inventory_info'

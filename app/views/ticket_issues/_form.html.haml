@@ -1,0 +1,15 @@
+= simple_form_for ([@ticket, @ticket.ticket_issues.build]), defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Issue Type
+        = f.input :issue_type_id, collection: IssueType.where(device_id: Device.where( device_type: ticket.ticketable_type)), label_method: :issue, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Description
+        = f.input :description, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Received by
+        = f.input :issue_received_method_id, collection: IssueReceivedMethod.all, label_method: :method, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'

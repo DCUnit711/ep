@@ -1,0 +1,23 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Supplies
+  - @print_station.inventories.each do |inventory|
+    %table.table.table-condensed.table-striped.table-hover
+      %tbody{style: 'font-size:14px'}
+        %tr{style: 'font-size:16px'}
+          %th Inventory Number:
+          %td= link_to inventory.id, inventory_path(inventory)
+        %tr
+          %th Type:
+          %td= inventory.inventory_type.inv_type
+        %tr
+          %th Location:
+          %td= link_to inventory.location.location, location_path(inventory.location)
+        %tr
+          %th Printer:
+          %td= link_to inventory.printer.serial_number, printer_path(inventory.printer)
+        %tr
+          %th Printer Model:
+          %td= inventory.printer.printer_model.model
+    - if @print_station.inventories.count > 1
+      %br

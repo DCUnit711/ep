@@ -1,0 +1,20 @@
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %th Comment
+      %th Employee
+      %th Submitted
+      %th
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= comment.content
+        %td= comment.employee.name unless comment.employee.nil?
+        %td= comment.created_at.strftime("%B %d, %Y")
+        %td
+          / = link_to 'Edit', edit_polymorphic_path(comment)
+          / = link_to 'Destroy', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+/ = link_to 'New Comment', [:new, @commentable, :comment]

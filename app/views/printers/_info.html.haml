@@ -1,0 +1,15 @@
+.row
+  .col-lg-2
+    .btn-group
+      = link_to printers_path, class: 'btn btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_printer_path(@printer), class: 'btn btn-default' do
+        %i.glyphicon.glyphicon-pencil
+%hr
+.row
+  .col-lg-4
+    =render 'printer_info'
+  .col-lg-4
+    =render 'inventory_info'
+  .col-lg-4
+    =render 'print_station_info'

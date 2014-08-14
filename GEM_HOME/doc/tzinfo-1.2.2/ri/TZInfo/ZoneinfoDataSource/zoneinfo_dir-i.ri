@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"zoneinfo_dir:EFI",TZInfo::ZoneinfoDataSource#zoneinfo_dir;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"'The zoneinfo directory being used.:encoding"IBM437:
+@file0FI"'lib/tzinfo/zoneinfo_data_source.rb;@

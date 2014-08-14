@@ -1,0 +1,18 @@
+.row
+  .col-lg-12
+    .btn-group
+      = link_to employees_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_employee_path(@employee), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+  .col-lg-3
+    .panel.panel-primary
+      .panel-heading
+        %h4 Employee Info
+      .panel-body
+        %p
+          %strong Name:
+          = @employee.name
+        %p
+          %strong Copy center:
+          = link_to @employee.copy_center.location, copy_center_path(@employee.copy_center_id) unless @employee.copy_center.nil?

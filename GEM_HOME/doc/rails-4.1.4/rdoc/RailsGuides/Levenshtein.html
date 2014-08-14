@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: RailsGuides::Levenshtein</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../guides/rails_guides/levenshtein_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="guides/rails_guides/levenshtein.rb">guides/rails_guides/levenshtein.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-distance">::distance</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../guides/Rakefile.html">Rakefile</a></li>
+        
+          <li class="file"><a href="../guides/assets/images/icons/README.html">README</a></li>
+        
+          <li class="file"><a href="../guides/code/getting_started/Gemfile.html">Gemfile</a></li>
+        
+          <li class="file"><a href="../guides/code/getting_started/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../guides/code/getting_started/Rakefile.html">Rakefile</a></li>
+        
+          <li class="file"><a href="../guides/code/getting_started/public/robots_txt.html">robots.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../RailsGuides.html">RailsGuides</a></li>
+        
+          <li><a href="../RailsGuides/Generator.html">RailsGuides::Generator</a></li>
+        
+          <li><a href="../RailsGuides/Helpers.html">RailsGuides::Helpers</a></li>
+        
+          <li><a href="../RailsGuides/Indexer.html">RailsGuides::Indexer</a></li>
+        
+          <li><a href="../RailsGuides/Levenshtein.html">RailsGuides::Levenshtein</a></li>
+        
+          <li><a href="../RailsGuides/Markdown.html">RailsGuides::Markdown</a></li>
+        
+          <li><a href="../RailsGuides/Markdown/Renderer.html">RailsGuides::Markdown::Renderer</a></li>
+        
+          <li><a href="../RailsGuides/Validator.html">RailsGuides::Validator</a></li>
+        
+          <li><a href="../ActiveSupport.html">ActiveSupport</a></li>
+        
+          <li><a href="../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+        
+          <li><a href="../Blog.html">Blog</a></li>
+        
+          <li><a href="../Blog/Application.html">Blog::Application</a></li>
+        
+          <li><a href="../ApplicationController.html">ApplicationController</a></li>
+        
+          <li><a href="../ApplicationHelper.html">ApplicationHelper</a></li>
+        
+          <li><a href="../BugTest.html">BugTest</a></li>
+        
+          <li><a href="../Comment.html">Comment</a></li>
+        
+          <li><a href="../CommentTest.html">CommentTest</a></li>
+        
+          <li><a href="../CommentsController.html">CommentsController</a></li>
+        
+          <li><a href="../CommentsControllerTest.html">CommentsControllerTest</a></li>
+        
+          <li><a href="../CommentsHelper.html">CommentsHelper</a></li>
+        
+          <li><a href="../CommentsHelperTest.html">CommentsHelperTest</a></li>
+        
+          <li><a href="../CreateComments.html">CreateComments</a></li>
+        
+          <li><a href="../CreatePosts.html">CreatePosts</a></li>
+        
+          <li><a href="../Kindle.html">Kindle</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Post.html">Post</a></li>
+        
+          <li><a href="../PostTest.html">PostTest</a></li>
+        
+          <li><a href="../PostsController.html">PostsController</a></li>
+        
+          <li><a href="../PostsControllerTest.html">PostsControllerTest</a></li>
+        
+          <li><a href="../PostsHelper.html">PostsHelper</a></li>
+        
+          <li><a href="../PostsHelperTest.html">PostsHelperTest</a></li>
+        
+          <li><a href="../TestApp.html">TestApp</a></li>
+        
+          <li><a href="../TestController.html">TestController</a></li>
+        
+          <li><a href="../WelcomeController.html">WelcomeController</a></li>
+        
+          <li><a href="../WelcomeControllerTest.html">WelcomeControllerTest</a></li>
+        
+          <li><a href="../WelcomeHelper.html">WelcomeHelper</a></li>
+        
+          <li><a href="../WelcomeHelperTest.html">WelcomeHelperTest</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">RailsGuides::Levenshtein</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="distance-method" class="method-detail ">
+          <a name="method-c-distance"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">distance</span><span
+              class="method-args">(s1, s2)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Based on the pseudocode in <a
+href="http://en.wikipedia.org/wiki/Levenshtein_distance">en.wikipedia.org/wiki/Levenshtein_distance</a></p>
+            
+
+            
+            <div class="method-source-code" id="distance-source">
+<pre>
+<span class="ruby-comment"># File guides/rails_guides/levenshtein.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">distance</span>(<span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">m</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">n</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">length</span>
+
+  <span class="ruby-comment"># matrix initialization</span>
+  <span class="ruby-identifier">d</span> = []
+  <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">m</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span>] }
+  <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">n</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>[<span class="ruby-value">0</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">j</span> }
+
+  <span class="ruby-comment"># distance computation</span>
+  <span class="ruby-value">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">m</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-value">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">n</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">cost</span> = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">t</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">d</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = [
+        <span class="ruby-identifier">d</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-value">1</span>,      <span class="ruby-comment"># deletion</span>
+        <span class="ruby-identifier">d</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-value">1</span>,      <span class="ruby-comment"># insertion</span>
+        <span class="ruby-identifier">d</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">cost</span>, <span class="ruby-comment"># substitution</span>
+      ].<span class="ruby-identifier">min</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># all done</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">m</span>][<span class="ruby-identifier">n</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- distance-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- distance-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

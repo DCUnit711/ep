@@ -1,0 +1,4 @@
+U:RDoc::AnyMethod[iI"cached:EFI"Hike::CachedTrail#cached;FF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"U`CachedTrail#cached` returns `self` to be compatable with the `Trail` interface.:encoding"IBM437:
+@file000[[I"
+index;Fo;;	[o;
+;	[I"#Deprecated alias for `cached`.;@;0I"();FI"lib/hike/cached_trail.rb;@

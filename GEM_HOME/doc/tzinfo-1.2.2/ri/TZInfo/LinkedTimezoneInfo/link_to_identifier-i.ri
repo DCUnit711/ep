@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"link_to_identifier:EFI"2TZInfo::LinkedTimezoneInfo#link_to_identifier;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"FThe zone that provides the data (that this zone is an alias for).:encoding"IBM437:
+@file0FI"'lib/tzinfo/linked_timezone_info.rb;@

@@ -1,0 +1,91 @@
+.page-header
+  %h1 Admin
+.row
+  .col-lg-2
+    %ul#myTab.nav.nav-pills.nav-stacked
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#support_center"} Support Centers
+      %li
+        %a{"data-toggle" => "tab", :href => "#employee"} Employees
+      %li
+        %a{"data-toggle" => "tab", :href => "#toner_location"} Toner Locations
+      %li
+        %a{"data-toggle" => "tab", :href => "#inventory_type"} Supply Types
+      %li
+        %a{"data-toggle" => "tab", :href => "#computer_model"} Computer Models
+      %li
+        %a{"data-toggle" => "tab", :href => "#computer_image"} Computer Images
+      %li
+        %a{"data-toggle" => "tab", :href => "#printer_model"} Printer Models
+      %li
+        %a{"data-toggle" => "tab", :href => "#ps_connection_information"} Print Station Connection Info
+      %li
+        %a{"data-toggle" => "tab", :href => "#devices"} Ticket Devices
+      %li
+        %a{"data-toggle" => "tab", :href => "#received_methods"} Issue Reception Methods
+      %li
+        %a{"data-toggle" => "tab", :href => "#issue_types"} Issue Types
+      %li
+        %a{"data-toggle" => "tab", :href => "#print_station_status"} Print Station Status
+  .col-lg-10
+    .tab-content
+      #support_center.tab-pane.active
+        = render 'layouts/copy_center'
+        = link_to new_copy_center_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Support Center
+      #employee.tab-pane
+        = render 'layouts/employee'
+        = link_to new_employee_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Employee
+      #toner_location.tab-pane
+        = render 'layouts/toner_location'
+        = link_to new_location_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Location
+      #inventory_type.tab-pane
+        = render 'layouts/inventory_type'
+        = link_to new_inventory_type_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Type
+      #computer_model.tab-pane
+        = render 'layouts/computer_model'
+        = link_to new_computer_model_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Model
+      #computer_image.tab-pane
+        = render 'layouts/computer_image'
+        = link_to new_computer_image_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Computer Image
+      #printer_model.tab-pane
+        = render 'layouts/printer_models'
+        = link_to new_printer_model_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Printer Model
+      #ps_connection_information.tab-pane
+        = render 'layouts/ps_connection_information'
+        = link_to new_ps_connection_information_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Connection
+      #devices.tab-pane
+        = render 'layouts/device'
+        = link_to new_device_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Device
+      #received_methods.tab-pane
+        = render 'layouts/received_methods'
+        = link_to new_issue_received_method_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Method
+      #issue_types.tab-pane
+        = render 'layouts/issue_types'
+        = link_to new_issue_type_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Issue Types
+      #print_station_status.tab-pane
+        = render 'layouts/print_station_status'
+        = link_to new_status_path, class: 'btn btn-primary' do
+          %i.glyphicon.glyphicon-plus
+          Status

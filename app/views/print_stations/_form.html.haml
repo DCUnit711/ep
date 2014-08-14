@@ -1,0 +1,68 @@
+= simple_form_for @print_station, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Status
+        =f.input :status_id, collection: Status.all, label_method: :status, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Support Center
+        =f.input :copy_center_id, collection: CopyCenter.all, label_method: :location, input_html:{class: 'form-control'}
+  .row
+    .col-lg-4.col-lg-offset-2
+      .form-group
+        %label.control-label Location ID
+        =f.input :location_id, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Location
+        =f.input :location, input_html:{class: 'form-control'}
+    .col-lg-4
+      .form-group
+        %label.control-label Building
+        =f.input :building, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Room Number
+        =f.input :room_number, input_html:{class: 'form-control'}
+  .row
+    .col-lg-4.col-lg-offset-2
+      .btn-group{data:{toggle: 'buttons'}}
+        %label.control-label{class: checked(@print_station.printer_our_jack)}
+          Our Printer Jack
+          =f.input :printer_our_jack, input_html:{class: 'hidden', type: 'checkbox', checked: true}
+        %label.control-label{class: checked(@print_station.computer_our_jack)}
+          Our Computer Jack
+          =f.input :computer_our_jack, input_html:{class: 'hidden', type: 'checkbox'}
+    .col-lg-4
+      .form-group
+        =f.input :computer_jack, placeholder: 'Computer Jack number', input_html:{class: 'form-control'}
+  .row
+    .col-lg-4.col-lg-offset-2
+      .btn-group{data:{toggle: 'buttons'}}
+        %label.control-label{class: checked(@print_station.strapped_down)}
+          Strapped Down
+          =f.input :strapped_down, input_html:{class: 'hidden',type: 'checkbox'}
+        %label.control-label{class: checked(@print_station.restricted_access)}
+          Restricted Access Lab
+          =f.input :restricted_access, input_html:{class: 'hidden',type: 'checkbox'}
+    .col-lg-4
+      .form-group
+        =f.input :key_code, placeholder: 'Door key code', input_html:{class: 'form-control'}
+  .row
+    .col-lg-4.col-lg-offset-2
+      .btn-group{data:{toggle: 'buttons'}}
+        %label.control-label{class: checked(@print_station.keyboard)}
+          Keyboard
+          =f.input :keyboard, input_html:{class: 'hidden', type: 'checkbox'}
+        %label.control-label{class: checked(@print_station.mouse)}
+          Mouse
+          =f.input :mouse, input_html:{class: 'hidden', type: 'checkbox'}
+        %label.control-label{class: checked(@print_station.touchpad)}
+          Touchpad
+          =f.input :touchpad, input_html:{class: 'hidden', type: 'checkbox'}
+    .col-lg-4
+      .form-group
+        =f.input :monitor, placeholder: 'Monitor type', input_html:{class: 'form-control'}
+  .row
+    .text-center
+      .btn-group
+        = f.button :submit, 'Save', class: 'btn btn-primary'
+        = link_to 'Back', print_stations_path, class: 'btn btn-primary'

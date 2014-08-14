@@ -1,0 +1,28 @@
+%h1 Tickets
+= link_to new_ticket_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Ticket
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %th Ticket ID
+      %th Device
+      %th Created By
+      %th Created Date
+      %th Completed By
+      %th Completed Date
+      %th
+  %tbody
+    - @tickets.each do |ticket|
+      %tr
+        %td= link_to ticket.id, ticket_path(ticket)
+        %td= ticket.device_id
+        %td= ticket.created.name
+        %td= ticket.created_at.strftime("%B %d, %Y")
+        %td= ticket.completed.name unless ticket.completed.nil?
+        %td= ticket.completed_at.strftime("%B %d, %Y") unless ticket.completed_at.nil?
+        %td
+          = link_to edit_ticket_path(ticket), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to ticket, method: :delete, data: { confirm: 'Are you sure?' }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

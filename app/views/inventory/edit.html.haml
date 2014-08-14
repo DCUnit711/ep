@@ -1,0 +1,25 @@
+.text-center
+  %h1 Edit Inventory
+= simple_form_for @inventory, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Type
+        = f.input :inventory_type_id, collection: InventoryType.all, label_method: :inv_type, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Description
+        = f.input :description, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Printer
+        = f.input :printer_id, collection: Printer.all, label_method: :serial_number, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Printer Model
+        = f.input :printer_model_id, collection: PrinterModel.all, label_method: :model, placeholder:"Only if no printer assigned", input_html:{class: 'form-control'}
+        * Add only if no printer is assigned to item
+      .form-group
+        %label.control-label Location
+        = f.input :location_id, collection: Location.all, label_method: :location, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', inventory_index_path, class: 'btn btn-primary'

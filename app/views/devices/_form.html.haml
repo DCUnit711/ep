@@ -1,0 +1,10 @@
+= simple_form_for @device, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Type
+        = f.input :device_type, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', devices_path, class: 'btn btn-primary'

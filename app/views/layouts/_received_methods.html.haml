@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Method
+      %th
+  %tbody
+    - @issue_received_methods.each do |issue_received_method|
+      %tr
+        %td= issue_received_method.method
+        %td
+          = link_to edit_issue_received_method_path(issue_received_method), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to issue_received_method, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

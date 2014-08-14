@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"tempfile:EFI"0ActionDispatch::Http::UploadedFile#tempfile;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IA +Tempfile+ object with the actual uploaded file. Note that some of:encoding"IBM437I")its interface is available directly.;@:
+@file0FI"'lib/action_dispatch/http/upload.rb;@

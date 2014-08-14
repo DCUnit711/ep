@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Status
+      %th
+  %tbody
+    - @statuses.each do |status|
+      %tr
+        %td= status.status
+        %td
+          = link_to edit_status_path(status), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to status, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

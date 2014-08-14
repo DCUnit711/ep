@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    %ul#myTab.nav.nav-tabs
+      %li
+        %a{"data-toggle" => "tab", :href => "#printer"} Printer Information
+      %li
+        %a{"data-toggle" => "tab", :href => "#ticket"} Ticket Info
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#stats"} Statistics
+  .col-md-12
+    .tab-content
+      #printer.tab-pane
+        %br
+        =render 'info'
+        %hr
+        .row
+          .col-md-9
+            =render 'comments/list'
+          =render 'comments/form'
+      #ticket.tab-pane
+        / =render 'tickets/list'
+        %br
+        =render 'tickets/open_tickets'
+        =render 'tickets/resolved_tickets'
+        =render 'tickets/form'
+      #stats.tab-pane.active
+        =render 'statistics'

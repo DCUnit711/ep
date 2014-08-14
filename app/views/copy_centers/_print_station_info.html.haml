@@ -1,0 +1,14 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Print Stations
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr.info
+        %th Station
+        %th Status
+      - @copy_center.print_stations.each do |print_station|
+        %tr{class: print_station_status(print_station)}
+          %td
+            = link_to print_station.location, print_station_path(print_station)
+          %td
+            = print_station.status.status

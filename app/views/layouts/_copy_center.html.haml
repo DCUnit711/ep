@@ -1,0 +1,18 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Location
+      %th Phone number
+      %th E-mail
+      %th
+  %tbody
+    - @copy_centers.each do |copy_center|
+      %tr
+        %td= link_to copy_center.location, copy_center_path(copy_center)
+        %td= copy_center.phone_number
+        %td= copy_center.email
+        %td
+          = link_to edit_copy_center_path(copy_center), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to copy_center, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

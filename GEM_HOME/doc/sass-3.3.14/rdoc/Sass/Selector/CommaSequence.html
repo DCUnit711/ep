@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Sass::Selector::CommaSequence - sass-3.3.14 Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="AbstractSequence.html">Sass::Selector::AbstractSequence</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-do_extend">#do_extend</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-resolve_parent_refs">#resolve_parent_refs</a>
+    
+    <li ><a href="#method-i-to_a">#to_a</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Sass::Selector::CommaSequence">
+  <h1 id="class-Sass::Selector::CommaSequence" class="class">
+    class Sass::Selector::CommaSequence
+  </h1>
+
+  <section class="description">
+    
+<p>A comma-separated sequence of selectors.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-members" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">members</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The comma-separated selector sequences represented by this class.</p>
+
+<p>@return [Array&lt;Sequence&gt;]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(seqs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param seqs [Array&lt;Sequence&gt;] See {#members}</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/sass/selector/comma_sequence.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">seqs</span>)
+  <span class="ruby-ivar">@members</span> = <span class="ruby-identifier">seqs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-do_extend" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">do_extend</span><span
+            class="method-args">(extends, parent_directives)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Non-destrucively extends this selector with the extensions specified in a
+hash (which should come from {Sass::Tree::Visitors::Cssize}).</p>
+
+<p>@todo Link this to the reference documentation on `@extend`</p>
+
+<pre>when such a thing exists.</pre>
+
+<p>@param extends [Sass::Util::SubsetMap{Selector::Simple =&gt;</p>
+
+<pre>                                    Sass::Tree::Visitors::Cssize::Extend}]
+The extensions to perform on this selector</pre>
+
+<p>@param parent_directives [Array&lt;Sass::Tree::DirectiveNode&gt;]</p>
+
+<pre>The directives containing this selector.</pre>
+
+<p>@return [CommaSequence] A copy of this selector,</p>
+
+<pre>with extensions made according to `extends`</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="do_extend-source">
+            <pre><span class="ruby-comment"># File lib/sass/selector/comma_sequence.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_extend</span>(<span class="ruby-identifier">extends</span>, <span class="ruby-identifier">parent_directives</span>)
+  <span class="ruby-constant">CommaSequence</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">members</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">seq</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">extended</span> = <span class="ruby-identifier">seq</span>.<span class="ruby-identifier">do_extend</span>(<span class="ruby-identifier">extends</span>, <span class="ruby-identifier">parent_directives</span>)
+    <span class="ruby-comment"># First Law of Extend: the result of extending a selector should</span>
+    <span class="ruby-comment"># always contain the base selector.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># See https://github.com/nex3/sass/issues/324.</span>
+    <span class="ruby-identifier">extended</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">seq</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">seq</span>.<span class="ruby-identifier">has_placeholder?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">extended</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">seq</span>)
+    <span class="ruby-identifier">extended</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string representation of the sequence. This is basically the
+selector string.</p>
+
+<p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/sass/selector/comma_sequence.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">members</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">inspect</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-resolve_parent_refs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolve_parent_refs</span><span
+            class="method-args">(super_cseq, implicit_parent = true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Resolves the {Parent} selectors within this selector by replacing them with
+the given parent selector, handling commas appropriately.</p>
+
+<p>@param super_cseq [CommaSequence] The parent selector @param
+implicit_parent [Boolean] Whether the the parent</p>
+
+<pre>selector should automatically be prepended to the resolved
+selector if it contains no parent refs.</pre>
+
+<p>@return [CommaSequence] This selector, with parent references resolved
+@raise [Sass::SyntaxError] If a parent selector is invalid</p>
+          
+          
+
+          
+          <div class="method-source-code" id="resolve_parent_refs-source">
+            <pre><span class="ruby-comment"># File lib/sass/selector/comma_sequence.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resolve_parent_refs</span>(<span class="ruby-identifier">super_cseq</span>, <span class="ruby-identifier">implicit_parent</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">super_cseq</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@members</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sel</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">sel</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sel_or_op</span><span class="ruby-operator">|</span>
+           <span class="ruby-identifier">sel_or_op</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SimpleSequence</span>) <span class="ruby-operator">&amp;&amp;</span>
+             <span class="ruby-identifier">sel_or_op</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">any?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ssel</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ssel</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Parent</span>)}
+         <span class="ruby-keyword">end</span>
+       <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-string">&quot;Base-level rules cannot contain the parent-selector-referencing character '&amp;'.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">CommaSequence</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">flatten_vertically</span>(<span class="ruby-ivar">@members</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">seq</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">seq</span>.<span class="ruby-identifier">resolve_parent_refs</span>(<span class="ruby-identifier">super_cseq</span>, <span class="ruby-identifier">implicit_parent</span>).<span class="ruby-identifier">members</span>
+  <span class="ruby-keyword">end</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@see <a href="Simple.html#method-i-to_a">Sass::Selector::Simple#to_a</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre><span class="ruby-comment"># File lib/sass/selector/comma_sequence.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a</span>
+  <span class="ruby-identifier">arr</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">intersperse</span>(<span class="ruby-ivar">@members</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_a</span>}, <span class="ruby-string">&quot;, &quot;</span>).<span class="ruby-identifier">flatten</span>
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">replace_subseq</span>(<span class="ruby-identifier">arr</span>, [<span class="ruby-string">&quot;, &quot;</span>, <span class="ruby-string">&quot;\n&quot;</span>], [<span class="ruby-string">&quot;,\n&quot;</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

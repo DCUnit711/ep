@@ -1,0 +1,8 @@
+{:ancestors{
+I"Hike::CachedTrail:EF[I"Hike::FileUtils;FI"Object;FI"Hike::Extensions;F[I"NormalizedArray;FI"Hike::NormalizedArray;F[I"
+Array;FI"Hike::Paths;F[I"Hike::NormalizedArray;FI"Hike::Trail;F[@	I"Object;F:attributes{@[	I"attr_reader aliases;FI"attr_reader extensions;FI"attr_reader paths;FI"attr_reader root;FI"Hike::Trail;F[I"attr_reader aliases;FI"attr_reader extensions;FI"attr_reader paths;F:class_methods{	@[I"new;F@[I"new;FI"Hike::Paths;F[I"new;FI"Hike::Trail;F[I"new;F:encodingIu:EncodingIBM437;F:instance_methods{@[I"aliases;FI"cached;FI"entries;FI"extensions;FI"extract_options!;FI"	find;FI"find_all;FI"find_in_base_path;FI"find_in_paths;FI"
+index;FI"
+match;FI"
+paths;FI"paths_contain?;FI"pattern_for;FI"relative?;FI"	root;FI"sort_matches;FI"	stat;F@[I"normalize_element;F@[I"<<;FI"[]=;FI"collect!;FI"insert;FI"	map!;FI"normalize_elements;FI"	push;FI"replace;FI"unshift;FI"Hike::Paths;F[I"normalize_element;FI"Hike::Trail;F[I"alias_extension;FI"aliases;FI"append_extension;FI"append_extensions;FI"append_path;FI"append_paths;FI"cached;FI"extensions;FI"	find;FI"find_all;FI"
+index;FI"
+paths;FI"prepend_extension;FI"prepend_extensions;FI"prepend_path;FI"prepend_paths;FI"remove_extension;FI"remove_path;FI"	root;FI"unalias_extension;FI"Hike::FileUtils;F[I"entries;FI"	stat;F:modules[I"	Hike;FI"Hike::CachedTrail;FI"Hike::Extensions;F@	@I"Hike::Paths;FI"Hike::Trail;F

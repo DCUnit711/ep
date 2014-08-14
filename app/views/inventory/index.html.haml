@@ -1,0 +1,31 @@
+.container
+  %h1 Inventory List
+  = link_to new_inventory_path, class: 'btn btn-primary' do
+    %i.glyphicon.glyphicon-plus
+    Inventory
+  %table.table.table-hover
+    %thead
+      %tr
+        %th ID
+        %th Type
+        %th Description
+        %th Printer
+        %th Location
+        %th
+    %tbody
+      - @inventory.each do |inventory|
+        %tr
+          %td= link_to inventory.id, inventory_path(inventory)
+          %td= inventory.inventory_type.inv_type unless inventory.inventory_type.nil?
+          %td= inventory.description
+          %td
+            - if inventory.printer
+              = link_to inventory.printer.serial_number, printer_path(inventory.printer_id) unless inventory.printer_id.nil?
+            - elsif inventory.printer_model
+              = link_to inventory.printer_model.model, printer_model_path(inventory.printer_model_id)
+          %td= link_to inventory.location.location, location_path(inventory.location_id) unless inventory.location_id.nil?
+          %td
+            = link_to edit_inventory_path(inventory), class: 'btn-sm' do
+              %i.glyphicon.glyphicon-pencil
+            = link_to inventory_path(inventory), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn-sm' do
+              %i.glyphicon.glyphicon-trash

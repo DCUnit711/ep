@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Sass::Engine - sass-3.3.14 Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-for_file">::for_file</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-normalize_options">::normalize_options</a>
+    
+    <li ><a href="#method-i-_dependencies">#_dependencies</a>
+    
+    <li ><a href="#method-i-dependencies">#dependencies</a>
+    
+    <li ><a href="#method-i-render">#render</a>
+    
+    <li ><a href="#method-i-render_with_sourcemap">#render_with_sourcemap</a>
+    
+    <li ><a href="#method-i-source_encoding">#source_encoding</a>
+    
+    <li ><a href="#method-i-to_css">#to_css</a>
+    
+    <li ><a href="#method-i-to_tree">#to_tree</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Sass::Engine">
+  <h1 id="class-Sass::Engine" class="class">
+    class Sass::Engine
+  </h1>
+
+  <section class="description">
+    
+<p>This class handles the parsing and compilation of the <a
+href="../Sass.html">Sass</a> template. Example usage:</p>
+
+<pre>template = File.load('stylesheets/sassy.sass')
+sass_engine = Sass::Engine.new(template)
+output = sass_engine.render
+puts output</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="COMMENT_CHAR">COMMENT_CHAR
+        
+        <dd><p>The character that designates the beginning of a comment, either <a
+href="../Sass.html">Sass</a> or <a href="CSS.html">CSS</a>.</p>
+        
+      
+        <dt id="CONTENT_RE">CONTENT_RE
+        
+        <dd>
+        
+      
+        <dt id="CSS_COMMENT_CHAR">CSS_COMMENT_CHAR
+        
+        <dd><p>The character that follows the general <a
+href="Engine.html#COMMENT_CHAR">COMMENT_CHAR</a> and designates a <a
+href="CSS.html">CSS</a> comment, which is embedded in the <a
+href="CSS.html">CSS</a> document.</p>
+        
+      
+        <dt id="DEFAULT_OPTIONS">DEFAULT_OPTIONS
+        
+        <dd><p>The default options for <a href="Engine.html">Sass::Engine</a>. @api public</p>
+        
+      
+        <dt id="DIRECTIVES">DIRECTIVES
+        
+        <dd>
+        
+      
+        <dt id="DIRECTIVE_CHAR">DIRECTIVE_CHAR
+        
+        <dd><p>The character used to denote a compiler directive.</p>
+        
+      
+        <dt id="ESCAPE_CHAR">ESCAPE_CHAR
+        
+        <dd><p>Designates a non-parsed rule.</p>
+        
+      
+        <dt id="FUNCTION_RE">FUNCTION_RE
+        
+        <dd>
+        
+      
+        <dt id="MIXIN_DEFINITION_CHAR">MIXIN_DEFINITION_CHAR
+        
+        <dd><p>Designates block as mixin definition rather than <a href="CSS.html">CSS</a>
+rules to output</p>
+        
+      
+        <dt id="MIXIN_DEF_RE">MIXIN_DEF_RE
+        
+        <dd>
+        
+      
+        <dt id="MIXIN_INCLUDE_CHAR">MIXIN_INCLUDE_CHAR
+        
+        <dd><p>Includes named mixin declared using <a
+href="Engine.html#MIXIN_DEFINITION_CHAR">MIXIN_DEFINITION_CHAR</a></p>
+        
+      
+        <dt id="MIXIN_INCLUDE_RE">MIXIN_INCLUDE_RE
+        
+        <dd>
+        
+      
+        <dt id="PROPERTY_CHAR">PROPERTY_CHAR
+        
+        <dd><p>The character that begins a <a href="CSS.html">CSS</a> property.</p>
+        
+      
+        <dt id="PROPERTY_OLD">PROPERTY_OLD
+        
+        <dd><p>The regex that matches and extracts data from properties of the form `:name
+prop`.</p>
+        
+      
+        <dt id="SASS_COMMENT_CHAR">SASS_COMMENT_CHAR
+        
+        <dd><p>The character that follows the general <a
+href="Engine.html#COMMENT_CHAR">COMMENT_CHAR</a> and designates a <a
+href="../Sass.html">Sass</a> comment, which is not output as a <a
+href="CSS.html">CSS</a> comment.</p>
+        
+      
+        <dt id="SASS_LOUD_COMMENT_CHAR">SASS_LOUD_COMMENT_CHAR
+        
+        <dd><p>The character that indicates that a comment allows interpolation and should
+be preserved even in `:compressed` mode.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The options for the <a href="../Sass.html">Sass</a> engine. See
+{file:SASS_REFERENCE.md#sass_options the <a href="../Sass.html">Sass</a>
+options documentation}.</p>
+
+<p>@return [{Symbol =&gt; Object}]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-for_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_file</span><span
+            class="method-args">(filename, options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the {Sass::Engine} for the given file. This is preferable to <a
+href="Engine.html#method-c-new">::new</a> when reading from a file because
+it properly sets up the Engine’s metadata, enables parse-tree caching, and
+infers the syntax from the filename.</p>
+
+<p>@param filename [String] The path to the <a href="../Sass.html">Sass</a> or
+<a href="SCSS.html">SCSS</a> file @param options [{Symbol =&gt; Object}]
+The options hash;</p>
+
+<pre>See {file:SASS_REFERENCE.md#sass_options the Sass options documentation}.</pre>
+
+<p>@return [Sass::Engine] The <a href="Engine.html">Engine</a> for the given
+<a href="../Sass.html">Sass</a> or <a href="SCSS.html">SCSS</a> file.
+@raise [Sass::SyntaxError] if there’s an error in the document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="for_file-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">for_file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">had_syntax</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:syntax</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">had_syntax</span>
+    <span class="ruby-comment"># Use what was explicitly specificed</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\.scss$/</span>
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:syntax</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:scss</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\.sass$/</span>
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:syntax</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sass</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Engine</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">filename</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(template, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="Engine.html">Engine</a>. Note that <a
+href="Engine.html">Engine</a> should only be used directly when compiling
+in-memory <a href="../Sass.html">Sass</a> code. If you’re compiling a
+single <a href="../Sass.html">Sass</a> file from the filesystem, use
+{Sass::Engine.for_file}. If you’re compiling multiple files from the
+filesystem, use {Sass::Plugin}.</p>
+
+<p>@param template [String] The <a href="../Sass.html">Sass</a> template.</p>
+
+<pre>This template can be encoded using any encoding
+that can be converted to Unicode.
+If the template contains an `@charset` declaration,
+that overrides the Ruby encoding
+(see {file:SASS_REFERENCE.md#encodings the encoding documentation})</pre>
+
+<p>@param options [{Symbol =&gt; Object}] An options hash.</p>
+
+<pre>See {file:SASS_REFERENCE.md#sass_options the Sass options documentation}.</pre>
+
+<p>@see {Sass::Engine.for_file} @see {Sass::Plugin}</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">template</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">normalize_options</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@template</span> = <span class="ruby-identifier">template</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-normalize_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize_options</span><span
+            class="method-args">(options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts a <a href="../Sass.html">Sass</a> options hash into a standard
+form, filling in default values and resolving aliases.</p>
+
+<p>@param options [{Symbol =&gt; Object}] The options hash;</p>
+
+<pre>see {file:SASS_REFERENCE.md#sass_options the Sass options documentation}</pre>
+
+<p>@return [{Symbol =&gt; Object}] The normalized options hash. @private</p>
+          
+          
+
+          
+          <div class="method-source-code" id="normalize_options-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">normalize_options</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span>})
+
+  <span class="ruby-comment"># If the `:filename` option is passed in without an importer,</span>
+  <span class="ruby-comment"># assume it's using the default filesystem importer.</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:filesystem_importer</span>].<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;.&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:filename</span>]
+
+  <span class="ruby-comment"># Tracks the original filename of the top-level Sass file</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:original_filename</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:filename</span>]
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:cache_store</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">CacheStores</span><span class="ruby-operator">::</span><span class="ruby-constant">Chain</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">CacheStores</span><span class="ruby-operator">::</span><span class="ruby-constant">Memory</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">CacheStores</span><span class="ruby-operator">::</span><span class="ruby-constant">Filesystem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:cache_location</span>]))
+  <span class="ruby-comment"># Support both, because the docs said one and the other actually worked</span>
+  <span class="ruby-comment"># for quite a long time.</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:line_comments</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:line_numbers</span>]
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:load_paths</span>] = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:load_paths</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">Sass</span>.<span class="ruby-identifier">load_paths</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">||</span> (<span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Pathname</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Pathname</span>))
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:filesystem_importer</span>].<span class="ruby-identifier">new</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Remove any deprecated importers if the location is imported explicitly</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:load_paths</span>].<span class="ruby-identifier">reject!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">importer</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">importer</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Importers</span><span class="ruby-operator">::</span><span class="ruby-constant">DeprecatedPath</span>) <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:load_paths</span>].<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">other_importer</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">other_importer</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Importers</span><span class="ruby-operator">::</span><span class="ruby-constant">Filesystem</span>) <span class="ruby-operator">&amp;&amp;</span>
+          <span class="ruby-identifier">other_importer</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">importer</span> <span class="ruby-operator">&amp;&amp;</span>
+          <span class="ruby-identifier">other_importer</span>.<span class="ruby-identifier">root</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">importer</span>.<span class="ruby-identifier">root</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Backwards compatibility</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:property_syntax</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:attribute_syntax</span>]
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:property_syntax</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:alternate</span>; <span class="ruby-identifier">options</span>[<span class="ruby-value">:property_syntax</span>] = <span class="ruby-value">:new</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:normal</span>; <span class="ruby-identifier">options</span>[<span class="ruby-value">:property_syntax</span>] = <span class="ruby-value">:old</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-_dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_dependencies</span><span
+            class="method-args">(seen, engines)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Helper for {#dependencies}.</p>
+
+<p>@private</p>
+          
+          
+
+          
+          <div class="method-source-code" id="_dependencies-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_dependencies</span>(<span class="ruby-identifier">seen</span>, <span class="ruby-identifier">engines</span>)
+  <span class="ruby-identifier">key</span> = [<span class="ruby-ivar">@options</span>[<span class="ruby-value">:filename</span>], <span class="ruby-ivar">@options</span>[<span class="ruby-value">:importer</span>]]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">seen</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">seen</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">engines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">to_tree</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-constant">Tree</span><span class="ruby-operator">::</span><span class="ruby-constant">ImportNode</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">css_import?</span>
+    <span class="ruby-identifier">n</span>.<span class="ruby-identifier">imported_file</span>.<span class="ruby-identifier">_dependencies</span>(<span class="ruby-identifier">seen</span>, <span class="ruby-identifier">engines</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dependencies</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets a set of all the documents that are (transitive) dependencies of this
+document, not including the document itself.</p>
+
+<p>@return [[Sass::Engine]] The dependency documents.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dependencies-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dependencies</span>
+  <span class="ruby-identifier">_dependencies</span>(<span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">engines</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">array_minus</span>(<span class="ruby-identifier">engines</span>, [<span class="ruby-keyword">self</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Render the template to <a href="CSS.html">CSS</a>.</p>
+
+<p>@return [String] The <a href="CSS.html">CSS</a> @raise [Sass::SyntaxError]
+if there’s an error in the document @raise
+[Encoding::UndefinedConversionError] if the source encoding</p>
+
+<pre>cannot be converted to UTF-8</pre>
+
+<p>@raise [ArgumentError] if the document uses an unknown encoding with
+`@charset`</p>
+          
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">encode_and_set_charset</span>(<span class="ruby-identifier">_to_tree</span>.<span class="ruby-identifier">render</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:quiet</span>]
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">silence_sass_warnings</span> {<span class="ruby-identifier">encode_and_set_charset</span>(<span class="ruby-identifier">_to_tree</span>.<span class="ruby-identifier">render</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Engine.html#method-i-to_css">to_css</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-render_with_sourcemap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_with_sourcemap</span><span
+            class="method-args">(sourcemap_uri)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Render the template to <a href="CSS.html">CSS</a> and return the source
+map.</p>
+
+<p>@param sourcemap_uri [String] The sourcemap URI to use in the</p>
+
+<pre>`@sourceMappingURL` comment. If this is relative, it should be relative
+to the location of the CSS file.</pre>
+
+<p>@return [(String, <a href="Source/Map.html">Sass::Source::Map</a>)] The
+rendered <a href="CSS.html">CSS</a> and the associated</p>
+
+<pre>source map</pre>
+
+<p>@raise [Sass::SyntaxError] if there’s an error in the document, or if the</p>
+
+<pre>public URL for this document couldn't be determined.</pre>
+
+<p>@raise [Encoding::UndefinedConversionError] if the source encoding</p>
+
+<pre>cannot be converted to UTF-8</pre>
+
+<p>@raise [ArgumentError] if the document uses an unknown encoding with
+`@charset`</p>
+          
+          
+
+          
+          <div class="method-source-code" id="render_with_sourcemap-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_with_sourcemap</span>(<span class="ruby-identifier">sourcemap_uri</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_render_with_sourcemap</span>(<span class="ruby-identifier">sourcemap_uri</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:quiet</span>]
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">silence_sass_warnings</span> {<span class="ruby-identifier">_render_with_sourcemap</span>(<span class="ruby-identifier">sourcemap_uri</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-source_encoding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_encoding</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the original encoding of the document, or `nil` under Ruby 1.8.</p>
+
+<p>@return [Encoding, nil] @raise [Encoding::UndefinedConversionError] if the
+source encoding</p>
+
+<pre>cannot be converted to UTF-8</pre>
+
+<p>@raise [ArgumentError] if the document uses an unknown encoding with
+`@charset`</p>
+          
+          
+
+          
+          <div class="method-source-code" id="source_encoding-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">source_encoding</span>
+  <span class="ruby-identifier">check_encoding!</span>
+  <span class="ruby-ivar">@original_encoding</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_css" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_css</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Engine.html#method-i-render">render</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-to_tree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_tree</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses the document into its parse tree. Memoized.</p>
+
+<p>@return [Sass::Tree::Node] The root of the parse tree. @raise
+[Sass::SyntaxError] if there’s an error in the document</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_tree-source">
+            <pre><span class="ruby-comment"># File lib/sass/engine.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_tree</span>
+  <span class="ruby-ivar">@tree</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:quiet</span>]
+              <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">silence_sass_warnings</span> {<span class="ruby-identifier">_to_tree</span>}
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">_to_tree</span>
+            <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

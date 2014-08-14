@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: Mail::Utilities</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/mail/utilities_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/mail/utilities.rb">lib/mail/utilities.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-atom_safe-3F">#atom_safe?</a></li>
+          
+          <li><a href="#method-i-bracket">#bracket</a></li>
+          
+          <li><a href="#method-i-capitalize_field">#capitalize_field</a></li>
+          
+          <li><a href="#method-i-constantize">#constantize</a></li>
+          
+          <li><a href="#method-i-dasherize">#dasherize</a></li>
+          
+          <li><a href="#method-i-dquote">#dquote</a></li>
+          
+          <li><a href="#method-i-escape_paren">#escape_paren</a></li>
+          
+          <li><a href="#method-i-map_lines">#map_lines</a></li>
+          
+          <li><a href="#method-i-map_with_index">#map_with_index</a></li>
+          
+          <li><a href="#method-i-match_to_s">#match_to_s</a></li>
+          
+          <li><a href="#method-i-paren">#paren</a></li>
+          
+          <li><a href="#method-i-quote_atom">#quote_atom</a></li>
+          
+          <li><a href="#method-i-quote_phrase">#quote_phrase</a></li>
+          
+          <li><a href="#method-i-quote_token">#quote_token</a></li>
+          
+          <li><a href="#method-i-token_safe-3F">#token_safe?</a></li>
+          
+          <li><a href="#method-i-unbracket">#unbracket</a></li>
+          
+          <li><a href="#method-i-underscoreize">#underscoreize</a></li>
+          
+          <li><a href="#method-i-unparen">#unparen</a></li>
+          
+          <li><a href="#method-i-unquote">#unquote</a></li>
+          
+          <li><a href="#method-i-uri_escape">#uri_escape</a></li>
+          
+          <li><a href="#method-i-uri_parser">#uri_parser</a></li>
+          
+          <li><a href="#method-i-uri_unescape">#uri_unescape</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="Patterns.html">Mail::Patterns</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+        
+          <li class="file"><a href="../TODO_rdoc.html">TODO.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Mail.html">Mail</a></li>
+        
+          <li><a href="../Mail/Address.html">Mail::Address</a></li>
+        
+          <li><a href="../Mail/AddressContainer.html">Mail::AddressContainer</a></li>
+        
+          <li><a href="../Mail/AttachmentsList.html">Mail::AttachmentsList</a></li>
+        
+          <li><a href="../Mail/BccField.html">Mail::BccField</a></li>
+        
+          <li><a href="../Mail/Body.html">Mail::Body</a></li>
+        
+          <li><a href="../Mail/CcField.html">Mail::CcField</a></li>
+        
+          <li><a href="../Mail/CheckDeliveryParams.html">Mail::CheckDeliveryParams</a></li>
+        
+          <li><a href="../Mail/CommentsField.html">Mail::CommentsField</a></li>
+        
+          <li><a href="../Mail/Configuration.html">Mail::Configuration</a></li>
+        
+          <li><a href="../Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a></li>
+        
+          <li><a href="../Mail/ContentDispositionField.html">Mail::ContentDispositionField</a></li>
+        
+          <li><a href="../Mail/ContentIdField.html">Mail::ContentIdField</a></li>
+        
+          <li><a href="../Mail/ContentLocationField.html">Mail::ContentLocationField</a></li>
+        
+          <li><a href="../Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a></li>
+        
+          <li><a href="../Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a></li>
+        
+          <li><a href="../Mail/ContentTypeField.html">Mail::ContentTypeField</a></li>
+        
+          <li><a href="../Mail/DateField.html">Mail::DateField</a></li>
+        
+          <li><a href="../Mail/Encodings.html">Mail::Encodings</a></li>
+        
+          <li><a href="../Mail/Encodings/Base64.html">Mail::Encodings::Base64</a></li>
+        
+          <li><a href="../Mail/Encodings/Binary.html">Mail::Encodings::Binary</a></li>
+        
+          <li><a href="../Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a></li>
+        
+          <li><a href="../Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a></li>
+        
+          <li><a href="../Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a></li>
+        
+          <li><a href="../Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a></li>
+        
+          <li><a href="../Mail/Envelope.html">Mail::Envelope</a></li>
+        
+          <li><a href="../Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a></li>
+        
+          <li><a href="../Mail/Exim.html">Mail::Exim</a></li>
+        
+          <li><a href="../Mail/Field.html">Mail::Field</a></li>
+        
+          <li><a href="../Mail/Field/FieldError.html">Mail::Field::FieldError</a></li>
+        
+          <li><a href="../Mail/FieldList.html">Mail::FieldList</a></li>
+        
+          <li><a href="../Mail/FileDelivery.html">Mail::FileDelivery</a></li>
+        
+          <li><a href="../Mail/FromField.html">Mail::FromField</a></li>
+        
+          <li><a href="../Mail/Header.html">Mail::Header</a></li>
+        
+          <li><a href="../Mail/IMAP.html">Mail::IMAP</a></li>
+        
+          <li><a href="../Mail/InReplyToField.html">Mail::InReplyToField</a></li>
+        
+          <li><a href="../Mail/IndifferentHash.html">Mail::IndifferentHash</a></li>
+        
+          <li><a href="../Mail/KeywordsField.html">Mail::KeywordsField</a></li>
+        
+          <li><a href="../Mail/Matchers.html">Mail::Matchers</a></li>
+        
+          <li><a href="../Mail/Matchers/HasSentEmailMatcher.html">Mail::Matchers::HasSentEmailMatcher</a></li>
+        
+          <li><a href="../Mail/Message.html">Mail::Message</a></li>
+        
+          <li><a href="../Mail/MessageIdField.html">Mail::MessageIdField</a></li>
+        
+          <li><a href="../Mail/MessageIdsElement.html">Mail::MessageIdsElement</a></li>
+        
+          <li><a href="../Mail/MimeVersionElement.html">Mail::MimeVersionElement</a></li>
+        
+          <li><a href="../Mail/MimeVersionField.html">Mail::MimeVersionField</a></li>
+        
+          <li><a href="../Mail/Multibyte.html">Mail::Multibyte</a></li>
+        
+          <li><a href="../Mail/Multibyte/Chars.html">Mail::Multibyte::Chars</a></li>
+        
+          <li><a href="../Mail/Multibyte/EncodingError.html">Mail::Multibyte::EncodingError</a></li>
+        
+          <li><a href="../Mail/Multibyte/Unicode.html">Mail::Multibyte::Unicode</a></li>
+        
+          <li><a href="../Mail/Multibyte/Unicode/Codepoint.html">Mail::Multibyte::Unicode::Codepoint</a></li>
+        
+          <li><a href="../Mail/Multibyte/Unicode/UnicodeDatabase.html">Mail::Multibyte::Unicode::UnicodeDatabase</a></li>
+        
+          <li><a href="../Mail/OptionalField.html">Mail::OptionalField</a></li>
+        
+          <li><a href="../Mail/POP3.html">Mail::POP3</a></li>
+        
+          <li><a href="../Mail/ParameterHash.html">Mail::ParameterHash</a></li>
+        
+          <li><a href="../Mail/Parsers.html">Mail::Parsers</a></li>
+        
+          <li><a href="../Mail/Parsers/AddressListsParser.html">Mail::Parsers::AddressListsParser</a></li>
+        
+          <li><a href="../Mail/Parsers/ContentDispositionParser.html">Mail::Parsers::ContentDispositionParser</a></li>
+        
+          <li><a href="../Mail/Parsers/ContentLocationParser.html">Mail::Parsers::ContentLocationParser</a></li>
+        
+          <li><a href="../Mail/Parsers/ContentTransferEncodingParser.html">Mail::Parsers::ContentTransferEncodingParser</a></li>
+        
+          <li><a href="../Mail/Parsers/ContentTypeParser.html">Mail::Parsers::ContentTypeParser</a></li>
+        
+          <li><a href="../Mail/Parsers/DateTimeParser.html">Mail::Parsers::DateTimeParser</a></li>
+        
+          <li><a href="../Mail/Parsers/EnvelopeFromParser.html">Mail::Parsers::EnvelopeFromParser</a></li>
+        
+          <li><a href="../Mail/Parsers/MessageIdsParser.html">Mail::Parsers::MessageIdsParser</a></li>
+        
+          <li><a href="../Mail/Parsers/MimeVersionParser.html">Mail::Parsers::MimeVersionParser</a></li>
+        
+          <li><a href="../Mail/Parsers/PhraseListsParser.html">Mail::Parsers::PhraseListsParser</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel.html">Mail::Parsers::Ragel</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/AddressListsMachine.html">Mail::Parsers::Ragel::AddressListsMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/ContentDispositionMachine.html">Mail::Parsers::Ragel::ContentDispositionMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/ContentLocationMachine.html">Mail::Parsers::Ragel::ContentLocationMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/ContentTransferEncodingMachine.html">Mail::Parsers::Ragel::ContentTransferEncodingMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/ContentTypeMachine.html">Mail::Parsers::Ragel::ContentTypeMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/DateTimeMachine.html">Mail::Parsers::Ragel::DateTimeMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/EnvelopeFromMachine.html">Mail::Parsers::Ragel::EnvelopeFromMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/MessageIdsMachine.html">Mail::Parsers::Ragel::MessageIdsMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/MimeVersionMachine.html">Mail::Parsers::Ragel::MimeVersionMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/PhraseListsMachine.html">Mail::Parsers::Ragel::PhraseListsMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/ReceivedMachine.html">Mail::Parsers::Ragel::ReceivedMachine</a></li>
+        
+          <li><a href="../Mail/Parsers/Ragel/Ruby.html">Mail::Parsers::Ragel::Ruby</a></li>
+        
+          <li><a href="../Mail/Parsers/ReceivedParser.html">Mail::Parsers::ReceivedParser</a></li>
+        
+          <li><a href="../Mail/Part.html">Mail::Part</a></li>
+        
+          <li><a href="../Mail/PartsList.html">Mail::PartsList</a></li>
+        
+          <li><a href="../Mail/Patterns.html">Mail::Patterns</a></li>
+        
+          <li><a href="../Mail/PhraseList.html">Mail::PhraseList</a></li>
+        
+          <li><a href="../Mail/ReceivedElement.html">Mail::ReceivedElement</a></li>
+        
+          <li><a href="../Mail/ReceivedField.html">Mail::ReceivedField</a></li>
+        
+          <li><a href="../Mail/ReferencesField.html">Mail::ReferencesField</a></li>
+        
+          <li><a href="../Mail/ReplyToField.html">Mail::ReplyToField</a></li>
+        
+          <li><a href="../Mail/ResentBccField.html">Mail::ResentBccField</a></li>
+        
+          <li><a href="../Mail/ResentCcField.html">Mail::ResentCcField</a></li>
+        
+          <li><a href="../Mail/ResentDateField.html">Mail::ResentDateField</a></li>
+        
+          <li><a href="../Mail/ResentFromField.html">Mail::ResentFromField</a></li>
+        
+          <li><a href="../Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a></li>
+        
+          <li><a href="../Mail/ResentSenderField.html">Mail::ResentSenderField</a></li>
+        
+          <li><a href="../Mail/ResentToField.html">Mail::ResentToField</a></li>
+        
+          <li><a href="../Mail/Retriever.html">Mail::Retriever</a></li>
+        
+          <li><a href="../Mail/ReturnPathField.html">Mail::ReturnPathField</a></li>
+        
+          <li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+        
+          <li><a href="../Mail/Ruby19.html">Mail::Ruby19</a></li>
+        
+          <li><a href="../Mail/Ruby19.html">Mail::RubyVer</a></li>
+        
+          <li><a href="../Mail/SMTP.html">Mail::SMTP</a></li>
+        
+          <li><a href="../Mail/SMTPConnection.html">Mail::SMTPConnection</a></li>
+        
+          <li><a href="../Mail/SenderField.html">Mail::SenderField</a></li>
+        
+          <li><a href="../Mail/Sendmail.html">Mail::Sendmail</a></li>
+        
+          <li><a href="../Mail/StructuredField.html">Mail::StructuredField</a></li>
+        
+          <li><a href="../Mail/SubjectField.html">Mail::SubjectField</a></li>
+        
+          <li><a href="../Mail/TestMailer.html">Mail::TestMailer</a></li>
+        
+          <li><a href="../Mail/TestRetriever.html">Mail::TestRetriever</a></li>
+        
+          <li><a href="../Mail/ToField.html">Mail::ToField</a></li>
+        
+          <li><a href="../Mail/UnstructuredField.html">Mail::UnstructuredField</a></li>
+        
+          <li><a href="../Mail/Utilities.html">Mail::Utilities</a></li>
+        
+          <li><a href="../Mail/VERSION.html">Mail::VERSION</a></li>
+        
+          <li><a href="../ActiveSupport.html">ActiveSupport</a></li>
+        
+          <li><a href="../Mail/Multibyte.html">ActiveSupport::Multibyte</a></li>
+        
+          <li><a href="../Net.html">Net</a></li>
+        
+          <li><a href="../Net/SMTP.html">Net::SMTP</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">Mail::Utilities</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="atom_safe-3F-method" class="method-detail ">
+          <a name="method-i-atom_safe-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">atom_safe?</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns true if the string supplied is free from characters not allowed as
+an ATOM</p>
+            
+
+            
+            <div class="method-source-code" id="atom_safe-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">atom_safe?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">not</span> <span class="ruby-constant">ATOM_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- atom_safe-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- atom_safe-3F-method -->
+
+      
+        <div id="bracket-method" class="method-detail ">
+          <a name="method-i-bracket"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bracket</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Wraps a string in angle brackets and escapes any that are in the string
+itself</p>
+
+<p>Example:</p>
+
+<pre>bracket( 'This is a string' ) #=&gt; '&lt;This is a string&gt;'</pre>
+            
+
+            
+            <div class="method-source-code" id="bracket-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bracket</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">RubyVer</span>.<span class="ruby-identifier">bracket</span>( <span class="ruby-identifier">str</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bracket-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bracket-method -->
+
+      
+        <div id="capitalize_field-method" class="method-detail ">
+          <a name="method-i-capitalize_field"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">capitalize_field</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Capitalizes a string that is joined by hyphens correctly.</p>
+
+<p>Example:</p>
+
+<pre>string = 'resent-from-field'
+capitalize_field( string ) #=&gt; 'Resent-From-Field'</pre>
+            
+
+            
+            <div class="method-source-code" id="capitalize_field-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">capitalize_field</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;-&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">capitalize</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- capitalize_field-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- capitalize_field-method -->
+
+      
+        <div id="constantize-method" class="method-detail ">
+          <a name="method-i-constantize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">constantize</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Takes an underscored word and turns it into a class name</p>
+
+<p>Example:</p>
+
+<pre>constantize(&quot;hello&quot;) #=&gt; &quot;Hello&quot;
+constantize(&quot;hello-there&quot;) #=&gt; &quot;HelloThere&quot;
+constantize(&quot;hello-there-mate&quot;) #=&gt; &quot;HelloThereMate&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="constantize-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">constantize</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/[-_]/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">capitalize</span> }.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- constantize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- constantize-method -->
+
+      
+        <div id="dasherize-method" class="method-detail ">
+          <a name="method-i-dasherize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dasherize</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Swaps out all underscores (_) for hyphens (-) good for stringing from
+symbols a field name.</p>
+
+<p>Example:</p>
+
+<pre>string = :resent_from_field
+dasherize ( string ) #=&gt; 'resent_from_field'</pre>
+            
+
+            
+            <div class="method-source-code" id="dasherize-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dasherize</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'_'</span>, <span class="ruby-string">'-'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- dasherize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dasherize-method -->
+
+      
+        <div id="dquote-method" class="method-detail ">
+          <a name="method-i-dquote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dquote</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Wraps supplied string in double quotes and applies -escaping as necessary,
+unless it is already wrapped.</p>
+
+<p>Example:</p>
+
+<pre>string = 'This is a string'
+dquote(string) #=&gt; '&quot;This is a string&quot;'
+
+string = 'This is &quot;a string&quot;'
+dquote(string #=&gt; '&quot;This is \&quot;a string\&quot;'</pre>
+            
+
+            
+            <div class="method-source-code" id="dquote-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dquote</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-string">'&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">unquote</span>(<span class="ruby-identifier">str</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[\\&quot;]/</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-string">'\'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">s</span> } <span class="ruby-operator">+</span> <span class="ruby-string">'&quot;'</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- dquote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dquote-method -->
+
+      
+        <div id="escape_paren-method" class="method-detail ">
+          <a name="method-i-escape_paren"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape_paren</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Escape parenthesies in a string</p>
+
+<p>Example:</p>
+
+<pre>str = 'This is (a) string'
+escape_paren( str ) #=&gt; 'This is \(a\) string'</pre>
+            
+
+            
+            <div class="method-source-code" id="escape_paren-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">escape_paren</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">RubyVer</span>.<span class="ruby-identifier">escape_paren</span>( <span class="ruby-identifier">str</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- escape_paren-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape_paren-method -->
+
+      
+        <div id="map_lines-method" class="method-detail ">
+          <a name="method-i-map_lines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">map_lines</span><span
+              class="method-args">( str, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="map_lines-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map_lines</span>( <span class="ruby-identifier">str</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">results</span> = []
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">results</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- map_lines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- map_lines-method -->
+
+      
+        <div id="map_with_index-method" class="method-detail ">
+          <a name="method-i-map_with_index"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">map_with_index</span><span
+              class="method-args">( enum, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="map_with_index-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map_with_index</span>( <span class="ruby-identifier">enum</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">results</span> = []
+  <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">results</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">i</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">results</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- map_with_index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- map_with_index-method -->
+
+      
+        <div id="match_to_s-method" class="method-detail ">
+          <a name="method-i-match_to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">match_to_s</span><span
+              class="method-args">( obj1, obj2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Matches two objects with their to_s values case insensitively</p>
+
+<p>Example:</p>
+
+<pre>obj2 = &quot;This_is_An_object&quot;
+obj1 = :this_IS_an_object
+match_to_s( obj1, obj2 ) #=&gt; true</pre>
+            
+
+            
+            <div class="method-source-code" id="match_to_s-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">match_to_s</span>( <span class="ruby-identifier">obj1</span>, <span class="ruby-identifier">obj2</span> )
+  <span class="ruby-identifier">obj1</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">casecmp</span>(<span class="ruby-identifier">obj2</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- match_to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- match_to_s-method -->
+
+      
+        <div id="paren-method" class="method-detail ">
+          <a name="method-i-paren"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">paren</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Wraps a string in parenthesis and escapes any that are in the string
+itself.</p>
+
+<p>Example:</p>
+
+<pre>paren( 'This is a string' ) #=&gt; '(This is a string)'</pre>
+            
+
+            
+            <div class="method-source-code" id="paren-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paren</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">RubyVer</span>.<span class="ruby-identifier">paren</span>( <span class="ruby-identifier">str</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- paren-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- paren-method -->
+
+      
+        <div id="quote_atom-method" class="method-detail ">
+          <a name="method-i-quote_atom"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">quote_atom</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>If the string supplied has ATOM unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified</p>
+            
+
+            
+            <div class="method-source-code" id="quote_atom-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quote_atom</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">atom_safe?</span>( <span class="ruby-identifier">str</span> ) <span class="ruby-operator">?</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- quote_atom-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- quote_atom-method -->
+
+      
+        <div id="quote_phrase-method" class="method-detail ">
+          <a name="method-i-quote_phrase"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">quote_phrase</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>If the string supplied has PHRASE unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified</p>
+            
+
+            
+            <div class="method-source-code" id="quote_phrase-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quote_phrase</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">'1.9'</span>
+    <span class="ruby-identifier">original_encoding</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">encoding</span>
+    <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-string">'ASCII-8BIT'</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">PHRASE_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>)
+      <span class="ruby-identifier">quoted_str</span> = <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>).<span class="ruby-identifier">force_encoding</span>(<span class="ruby-identifier">original_encoding</span>)
+      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-identifier">original_encoding</span>)
+      <span class="ruby-identifier">quoted_str</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-identifier">original_encoding</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    (<span class="ruby-constant">PHRASE_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- quote_phrase-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- quote_phrase-method -->
+
+      
+        <div id="quote_token-method" class="method-detail ">
+          <a name="method-i-quote_token"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">quote_token</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>If the string supplied has TOKEN unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified</p>
+            
+
+            
+            <div class="method-source-code" id="quote_token-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quote_token</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">token_safe?</span>( <span class="ruby-identifier">str</span> ) <span class="ruby-operator">?</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- quote_token-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- quote_token-method -->
+
+      
+        <div id="token_safe-3F-method" class="method-detail ">
+          <a name="method-i-token_safe-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">token_safe?</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns true if the string supplied is free from characters not allowed as
+a TOKEN</p>
+            
+
+            
+            <div class="method-source-code" id="token_safe-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">token_safe?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">not</span> <span class="ruby-constant">TOKEN_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- token_safe-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- token_safe-3F-method -->
+
+      
+        <div id="unbracket-method" class="method-detail ">
+          <a name="method-i-unbracket"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unbracket</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Unwraps a string from being wrapped in parenthesis</p>
+
+<p>Example:</p>
+
+<pre>str = '&lt;This is a string&gt;'
+unbracket( str ) #=&gt; 'This is a string'</pre>
+            
+
+            
+            <div class="method-source-code" id="unbracket-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unbracket</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">match</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/^\&lt;(.*?)\&gt;$/</span>)
+  <span class="ruby-identifier">match</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- unbracket-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unbracket-method -->
+
+      
+        <div id="underscoreize-method" class="method-detail ">
+          <a name="method-i-underscoreize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">underscoreize</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Swaps out all hyphens (-) for underscores (_) good for stringing to symbols
+a field name.</p>
+
+<p>Example:</p>
+
+<pre>string = :resent_from_field
+underscoreize ( string ) #=&gt; 'resent_from_field'</pre>
+            
+
+            
+            <div class="method-source-code" id="underscoreize-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">underscoreize</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'-'</span>, <span class="ruby-string">'_'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- underscoreize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- underscoreize-method -->
+
+      
+        <div id="unparen-method" class="method-detail ">
+          <a name="method-i-unparen"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unparen</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Unwraps a string from being wrapped in parenthesis</p>
+
+<p>Example:</p>
+
+<pre>str = '(This is a string)'
+unparen( str ) #=&gt; 'This is a string'</pre>
+            
+
+            
+            <div class="method-source-code" id="unparen-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unparen</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">match</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/^\((.*?)\)$/</span>)
+  <span class="ruby-identifier">match</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- unparen-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unparen-method -->
+
+      
+        <div id="unquote-method" class="method-detail ">
+          <a name="method-i-unquote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unquote</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Unwraps supplied string from inside double quotes and removes any
+-escaping.</p>
+
+<p>Example:</p>
+
+<pre>string = '&quot;This is a string&quot;'
+unquote(string) #=&gt; 'This is a string'
+
+string = '&quot;This is \&quot;a string\&quot;&quot;'
+unqoute(string) #=&gt; 'This is &quot;a string&quot;'</pre>
+            
+
+            
+            <div class="method-source-code" id="unquote-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unquote</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^&quot;(.*?)&quot;$/</span>
+    <span class="ruby-node">$1</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\\(.)/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- unquote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unquote-method -->
+
+      
+        <div id="uri_escape-method" class="method-detail ">
+          <a name="method-i-uri_escape"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">uri_escape</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="uri_escape-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uri_escape</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">uri_parser</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- uri_escape-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- uri_escape-method -->
+
+      
+        <div id="uri_parser-method" class="method-detail ">
+          <a name="method-i-uri_parser"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">uri_parser</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="uri_parser-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uri_parser</span>
+  <span class="ruby-ivar">@uri_parser</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">URI</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Parser</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">:</span> <span class="ruby-constant">URI</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- uri_parser-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- uri_parser-method -->
+
+      
+        <div id="uri_unescape-method" class="method-detail ">
+          <a name="method-i-uri_unescape"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">uri_unescape</span><span
+              class="method-args">( str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="uri_unescape-source">
+<pre>
+<span class="ruby-comment"># File lib/mail/utilities.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uri_unescape</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">uri_parser</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- uri_unescape-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- uri_unescape-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

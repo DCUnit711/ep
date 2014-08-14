@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"silenced:EFI"3ActiveSupport::Deprecation::Reporting#silenced;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-Whether to print a message (silent mode);T:
+@file0FI"0lib/active_support/deprecation/reporting.rb;T

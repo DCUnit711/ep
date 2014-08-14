@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"container:EFI""MIME::Types::Loader#container;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe MIME::Types container instance that will be loaded. If not provided:encoding"IBM437I"Gat initialization, a new MIME::Types instance will be constructed.;@:
+@file0FI"lib/mime/types/loader.rb;@

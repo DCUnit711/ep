@@ -1,0 +1,18 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Inventory
+  -if @printer.inventories.count > 0
+    - @printer.inventories.each do |inventory|
+      %table.table.table-condensed.table-striped.table-hover
+        %tbody{style: 'font-size:14px'}
+          %tr{style: 'font-size:16px'}
+            %th Item:
+            %td= link_to inventory.inventory_type.inv_type, inventory_path(inventory)
+          %tr
+            %th Location:
+            %td= link_to inventory.location.location, location_path(inventory.location)
+      -if @printer.inventories.count > 1
+        %br
+  -else
+    .well.well-sm
+      %strong No toner in reserve for this printer

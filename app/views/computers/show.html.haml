@@ -1,0 +1,23 @@
+.row
+  .col-md-12
+    %ul#myTab.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#computer"} Computer Information
+      %li
+        %a{"data-toggle" => "tab", :href => "#ticket"} Ticket Info
+  .col-md-12
+    .tab-content
+      #computer.tab-pane.active
+        %br
+        =render 'info'
+        %hr
+        .row
+          .col-md-9
+            =render 'comments/list'
+          =render 'comments/form'
+      #ticket.tab-pane
+        / =render 'tickets/list'
+        %br
+        =render 'tickets/open_tickets'
+        =render 'tickets/resolved_tickets'
+        =render 'tickets/form'

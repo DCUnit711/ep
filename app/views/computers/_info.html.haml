@@ -1,0 +1,15 @@
+.row
+  .col-lg-12
+    .btn-group
+      = link_to computers_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_computer_path(@computer), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+  .col-lg-3
+    =render 'computer_info'
+  .col-lg-3
+    .panel.panel-info
+      .panel-heading
+        %h4 Print Station
+      .panel-body
+        %p= link_to @computer.print_station.location, print_station_path(@computer.print_station_id) unless @computer.print_station_id.nil?

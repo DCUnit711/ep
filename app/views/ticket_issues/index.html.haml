@@ -1,0 +1,24 @@
+%h1 Ticket Issues
+= link_to new_ticket_issue_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Printer
+%table.table.table-hover
+  %thead
+    %tr
+      %th Ticket
+      %th Issue type
+      %th Description
+      %th Issue received method
+      %th
+  %tbody
+    - @ticket_issues.each do |ticket_issue|
+      %tr
+        %td= ticket_issue.ticket_id
+        %td= ticket_issue.issue_type_id
+        %td= link_to ticket_issue.description, ticket_issue_path(ticket_issue)
+        %td= ticket_issue.issue_received_method_id
+        %td
+          / = link_to edit_ticket_issue_path(ticket_issue), class: 'btn-sm' do
+          /   %i.glyphicon.glyphicon-pencil
+          / = link_to ticket_issue, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+          /   %i.glyphicon.glyphicon-trash

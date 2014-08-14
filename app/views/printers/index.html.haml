@@ -1,0 +1,58 @@
+%h1 Printers
+= link_to new_printer_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Printer
+%hr
+.panel.panel-primary
+  .panel-heading
+    Active Printers
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Print Station
+        %th IP Address
+        %th Serial number
+        %th Model
+        %th Color/B&W
+        %th Webjet model
+        %th
+    %tbody
+      - @printers.each do |printer|
+        - if printer.ps_connection_information
+          %tr
+            %td= link_to printer.ps_connection_information.print_station.location, print_station_path(printer.ps_connection_information.print_station_id) unless printer.ps_connection_information.nil?
+            %td= link_to printer.ps_connection_information.ip_address, ps_connection_information_path(printer.ps_connection_information)
+            %td= link_to printer.serial_number, printer_path(printer)
+            %td= link_to printer.printer_model.model, printer_model_path(printer.printer_model_id) unless printer.printer_model.nil?
+            %td= nice_color printer.color_bw
+            %td= printer.webjet_model
+            %td
+              = link_to edit_printer_path(printer), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to printer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash
+%hr
+.panel.panel-info
+  .panel-heading
+    Printers in Storage
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Serial number
+        %th Model
+        %th Color/B&W
+        %th Webjet model
+        %th
+    %tbody
+      - @printers.each do |printer|
+        - if printer.ps_connection_information.nil?
+          %tr
+            %td= link_to printer.serial_number, printer_path(printer)
+            %td= link_to printer.printer_model.model, printer_model_path(printer.printer_model_id) unless printer.printer_model.nil?
+            %td= nice_color printer.color_bw
+            %td= printer.webjet_model
+            %td
+              = link_to edit_printer_path(printer), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to printer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash

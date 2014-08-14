@@ -1,0 +1,25 @@
+.panel.panel-success
+  .panel-heading
+    %h4 Active Printers
+  - @printer_model.printers.each do |printer|
+    -if printer.ps_connection_information
+      %table.table.table-condensed.table-striped.table-hover
+        %tbody{style: 'font-size:14px'}
+          %tr{style: 'font-size:16px'}
+            %th Printer:
+            %td= link_to printer.serial_number, printer_path(printer)
+          %tr
+            %th Location:
+            %td= link_to printer.ps_connection_information.print_station.location, print_station_path(printer.ps_connection_information.print_station)
+      %br
+.panel.panel-warning
+  .panel-heading
+    %h4 Printers in storage
+  - @printer_model.printers.each do |printer|
+    -if printer.ps_connection_information.nil?
+      %table.table.table-condensed.table-striped.table-hover
+        %tbody{style: 'font-size:14px'}
+          %tr
+            %th Printer:
+            %td= link_to printer.serial_number, printer_path(printer)
+      %br

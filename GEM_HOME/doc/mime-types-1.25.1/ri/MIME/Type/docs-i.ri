@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	docs:EFI"MIME::Type#docs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EThe documentation for this MIME::Type. Documentation about media:encoding"IBM437I"Atypes will be found on a media type definition as a comment.;@I"/Documentation will be found through #docs.;@:
+@file0FI"lib/mime/types.rb;@

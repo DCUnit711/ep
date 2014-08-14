@@ -1,0 +1,8 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Employees
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      - @copy_center.employees.each do |employee|
+        %tr
+          %td= employee.name

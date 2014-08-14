@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"env:EFI"Rack::Request#env;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"$The environment of the request.:encoding"IBM437:
+@file0FI"lib/rack/request.rb;@

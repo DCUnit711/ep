@@ -1,0 +1,33 @@
+.row
+  .btn-group
+    = link_to tickets_path, class: 'btn btn-sm btn-default' do
+      %i.glyphicon.glyphicon-arrow-left
+    = link_to edit_ticket_path(@ticket), class: 'btn btn-sm btn-default' do
+      %i.glyphicon.glyphicon-pencil
+  %hr
+.row
+  .col-lg-4
+    .panel.panel-primary
+      .panel-heading
+        %h4 Ticket Info
+      .panel-body
+        %p
+          %strong Created by:
+          = @ticket.created.name unless @ticket.created.nil?
+        %p
+          %strong Created on:
+          =@ticket.created_at.strftime("%B %d, %Y")
+        %p
+          %strong Completed by:
+          = @ticket.completed.name unless @ticket.completed.nil?
+        %p
+          %strong Completed at:
+          = @ticket.completed_at.strftime("%B %d, %Y") unless @ticket.completed_at.nil?
+        %p
+          %strong Issue received method:
+          = @ticket.issue_received_method.method
+%hr
+.row
+  .col-lg-9
+    =render 'comments/list'
+  =render 'comments/form'

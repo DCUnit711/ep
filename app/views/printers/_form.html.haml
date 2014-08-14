@@ -1,0 +1,22 @@
+= simple_form_for @printer, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Connection Information
+        = f.input :ps_connection_information_id, collection: PsConnectionInformation.all, label_method: :ip_address,input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Serial Number
+        = f.input :serial_number, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Model
+        = f.input :printer_model_id, collection: PrinterModel.all, label_method: :model, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Color/B&W
+        = f.input :color_bw, collection: Printer::COLORS.map { |k,v| [v,k] }, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label WebJet Model
+        = f.input :webjet_model, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', printers_path, class: 'btn btn-primary'

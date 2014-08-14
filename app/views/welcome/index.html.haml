@@ -1,0 +1,92 @@
+%head
+  %title Express Print
+  %meta{:content => "In house website for running BYU Print & Mail Express Print", :name => "description"}/
+  %meta{:content => "noindex", :name => "robots"}/
+  %meta{:content => "Bootply", :name => "generator"}/
+  %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
+/ HTML code from Bootply.com editor
+%body
+/ Main
+.jumbotron
+  %h1 Welcome to Express Print
+  %p The one stop shop for Express Print.
+
+.row
+  .col-md-12
+    %a{:href => "#"}
+      %strong
+        %i.glyphicon.glyphicon-tasks
+        Dashboard
+    %hr
+      .row
+        / center left
+        .col-md-7
+          =render 'tickets/open_tickets_info'
+          %hr
+            %td
+              %a{:href => "#"}
+                %strong
+                  %i.glyphicon.glyphicon-download
+                  Passdowns
+            %td
+              = link_to new_passdown_path, class: 'btn btn-primary' do
+                %i.glyphicon.glyphicon-plus
+                Passdown
+          %hr
+          =render 'passdowns/list'
+
+        / center-right
+        .col-md-5
+          .panel.panel-info
+            .panel-heading
+              %h4 
+                Print Stations
+                %span.badge.pull-right
+                  = PrintStation.count - PrintStation.where(status_id: '4').count
+            .panel-body
+              %small Running
+              .progress
+                .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "10", "aria-valuenow" => "50", :role => "progressbar", :style => "width: #{ up_stations }%" }
+                  = PrintStation.where(status_id: '1').count
+              %small Down
+              .progress
+                .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: #{ down_stations }%" }
+                  = PrintStation.where(status_id: '2').count
+              %p
+                Suspended
+                %span.badge.pull-right
+                  = PrintStation.where(status_id: '3').count
+              %p
+                Removed
+                %span.badge.pull-right
+                  = PrintStation.where(status_id: '4').count
+          .panel.panel-info
+            .panel-heading
+              %h4 
+                Printers
+                %span.badge.pull-right
+                  = Printer.count
+            .panel-body
+              %p
+                In Service:
+                %span.badge.pull-right
+                  = Printer.count(:ps_connection_information_id)
+              %p
+                In Storage:
+                %span.badge.pull-right
+                  = Printer.count - Printer.count(:ps_connection_information_id)
+          .panel.panel-info
+            .panel-heading
+              %h4 
+                Computers
+                %span.badge.pull-right
+                  = Computer.count
+            .panel-body
+              %p
+                In Service:
+                %span.badge.pull-right
+                  = Computer.count(:print_station_id)
+              %p
+                In Storage:
+                %span.badge.pull-right
+                  = Computer.count - Computer.count(:print_station_id)

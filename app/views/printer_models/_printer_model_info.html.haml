@@ -1,0 +1,38 @@
+.panel.panel-primary
+  .panel-heading
+    %h4
+      Printer Model Info
+      = link_to edit_printer_model_path(@printer_model), class: 'btn btn-sm btn-default pull-right' do
+        %i.glyphicon.glyphicon-pencil
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Model:
+        %td= @printer_model.model
+      %tr
+        %th Service code:
+        %td= @printer_model.service_code
+      %tr
+        %th Black:
+        %td= @printer_model.black
+      %tr
+        %th Cyan:
+        %td= @printer_model.cyan
+      %tr
+        %th Magenta:
+        %td= @printer_model.magenta
+      %tr
+        %th Yellow:
+        %td= @printer_model.yellow
+      %tr
+        %th Fuser:
+        %td= @printer_model.fuser
+      %tr
+        %th Maint kit:
+        %td= @printer_model.maint_kit
+      %tr
+        %th Transfer kit:
+        %td= @printer_model.transfer_kit
+      %tr
+        %th Collection unit:
+        %td= @printer_model.collection_unit

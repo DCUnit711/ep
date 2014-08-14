@@ -1,0 +1,16 @@
+Mon, 11 Aug 2014 14:39:46 -0600
+lib/blankslate.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/blankslate.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/version.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/xchar.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/xmlbase.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/xmlevents.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder/xmlmarkup.rb	Mon, 11 Aug 2014 14:39:15 -0600
+lib/builder.rb	Mon, 11 Aug 2014 14:39:15 -0600
+CHANGES	Mon, 11 Aug 2014 14:39:15 -0600
+MIT-LICENSE	Mon, 11 Aug 2014 14:39:15 -0600
+README.md	Mon, 11 Aug 2014 14:39:15 -0600
+Rakefile	Mon, 11 Aug 2014 14:39:15 -0600
+doc/releases/builder-1.2.4.rdoc	Mon, 11 Aug 2014 14:39:15 -0600
+doc/releases/builder-2.0.0.rdoc	Mon, 11 Aug 2014 14:39:15 -0600
+doc/releases/builder-2.1.1.rdoc	Mon, 11 Aug 2014 14:39:15 -0600

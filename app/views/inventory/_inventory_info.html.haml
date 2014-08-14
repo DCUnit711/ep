@@ -1,0 +1,21 @@
+.panel.panel-primary
+  .panel-heading
+    %h4 Toner Type Info
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Type:
+        %td= @inventory.inventory_type.inv_type
+      %tr
+        %th Description:
+        %td= @inventory.description
+      %tr
+        %th Printer:
+        - if @inventory.printer
+          %td= link_to @inventory.printer.serial_number, printer_path(@inventory.printer)
+        - elsif @inventory.printer_model
+          %td= link_to @inventory.printer_model.model, printer_model_path(@inventory.printer_model)
+        - else
+      %tr
+        %th Location:
+        %td= @inventory.location.location

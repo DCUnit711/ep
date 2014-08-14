@@ -1,0 +1,20 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Print Station
+      %th IP Address
+      %th Printer Jack
+      %th Pharos
+      %th
+  %tbody
+    - @ps_connection_informations.each do |ps_connection_information|
+      %tr
+        %td= link_to ps_connection_information.print_station.location, print_station_path(ps_connection_information.print_station) unless ps_connection_information.print_station_id.nil?
+        %td= link_to ps_connection_information.ip_address, ps_connection_information_path(ps_connection_information)
+        %td= ps_connection_information.jack
+        %td= ps_connection_information.pharos
+        %td
+          = link_to edit_ps_connection_information_path(ps_connection_information), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to ps_connection_information, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

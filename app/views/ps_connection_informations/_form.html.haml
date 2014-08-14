@@ -1,0 +1,19 @@
+= simple_form_for @ps_connection_information, defaults:{ label:false } do |f|
+  .row
+    .col-lg-4.col-lg-offset-4
+      .form-group
+        %label.control-label Print Station
+        = f.input :print_station_id, collection: PrintStation.all, label_method: :location, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label IP Address
+        = f.input :ip_address, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Printer Jack
+        = f.input :jack, input_html:{class: 'form-control'}
+      .form-group
+        %label.control-label Pharos Name
+        = f.input :pharos, input_html:{class: 'form-control'}
+      .text-center
+        .btn-group
+          = f.button :submit, 'Save', class: 'btn btn-primary'
+          = link_to 'Back', admin_index_path, class: 'btn btn-primary'

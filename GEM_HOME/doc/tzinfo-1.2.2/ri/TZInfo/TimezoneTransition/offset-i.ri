@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"offset:EFI"&TZInfo::TimezoneTransition#offset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GThe offset this transition changes to (a TimezoneOffset instance).:encoding"IBM437:
+@file0FI"&lib/tzinfo/timezone_transition.rb;@

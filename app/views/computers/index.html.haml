@@ -1,0 +1,56 @@
+%h1 Computers
+= link_to new_computer_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Computer
+%hr
+.panel.panel-primary
+  .panel-heading
+    Active Computers
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Print Station
+        %th Service tag
+        %th Model
+        %th Image Date
+        %th VGA/DVI
+        %th
+    %tbody
+      - @computers.each do |computer|
+        - if computer.print_station_id
+          %tr
+            %td= link_to computer.print_station.location, print_station_path(computer.print_station_id) unless computer.print_station.nil?
+            %td= link_to computer.service_tag, computer_path(computer)
+            %td= computer.computer_model.model unless computer.computer_model.nil?
+            %td= computer.computer_image.image unless computer.computer_image.nil?
+            %td= computer.vga_dvi
+            %td
+              = link_to edit_computer_path(computer), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to computer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash
+%hr
+.panel.panel-info
+  .panel-heading
+    Imaged Stand-by Computers
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Service tag
+        %th Model
+        %th Image Date
+        %th VGA/DVI
+        %th
+    %tbody
+      - @computers.each do |computer|
+        - if computer.print_station_id.nil?
+          %tr
+            %td= link_to computer.service_tag, computer_path(computer)
+            %td= computer.computer_model.model unless computer.computer_model.nil?
+            %td= computer.computer_image.image unless computer.computer_image.nil?
+            %td= computer.vga_dvi
+            %td
+              = link_to edit_computer_path(computer), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to computer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash

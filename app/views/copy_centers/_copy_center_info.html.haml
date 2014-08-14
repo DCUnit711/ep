@@ -1,0 +1,14 @@
+.panel.panel-primary
+  .panel-heading
+    %h4 Support Center Info
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Location:
+        %td= @copy_center.location
+      %tr
+        %th Phone number:
+        %td= @copy_center.phone_number
+      %tr
+        %th E-Mail:
+        %td= @copy_center.email

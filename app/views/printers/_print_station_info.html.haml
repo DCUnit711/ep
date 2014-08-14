@@ -1,0 +1,21 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Print Station
+  %table.table.table-condensed.table-striped.table-hover
+    - if @printer.ps_connection_information
+      %tbody{style: 'font-size:14px'}
+        %tr
+          %th Location ID:
+          %td= @printer.ps_connection_information.print_station.location_id
+        %tr
+          %th Location:
+          %td= link_to @printer.ps_connection_information.print_station.location, print_station_path(@printer.ps_connection_information.print_station)
+        %tr
+          %th IP Address:
+          %td= @printer.ps_connection_information.ip_address
+        %tr
+          %th Printer Jack:
+          %td= @printer.ps_connection_information.jack
+    - else
+      .well
+        None assigned

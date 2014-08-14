@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Sass::Tree::Visitors::Perform - sass-3.3.14 Documentation</title>
+
+<link href="../../../fonts.css" rel="stylesheet">
+<link href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/search_index.js"></script>
+<script src="../../../js/search.js"></script>
+<script src="../../../js/searcher.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Base.html">Sass::Tree::Visitors::Base</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-perform_arguments">#perform_arguments</a>
+    
+    <li ><a href="#method-i-perform_splat">#perform_splat</a>
+    
+    <li ><a href="#method-i-visit">#visit</a>
+    
+    <li ><a href="#method-i-visit_atroot">#visit_atroot</a>
+    
+    <li class="calls-super" ><a href="#method-i-visit_children">#visit_children</a>
+    
+    <li ><a href="#method-i-visit_comment">#visit_comment</a>
+    
+    <li ><a href="#method-i-visit_content">#visit_content</a>
+    
+    <li ><a href="#method-i-visit_cssimport">#visit_cssimport</a>
+    
+    <li ><a href="#method-i-visit_debug">#visit_debug</a>
+    
+    <li ><a href="#method-i-visit_directive">#visit_directive</a>
+    
+    <li ><a href="#method-i-visit_each">#visit_each</a>
+    
+    <li ><a href="#method-i-visit_extend">#visit_extend</a>
+    
+    <li ><a href="#method-i-visit_for">#visit_for</a>
+    
+    <li ><a href="#method-i-visit_function">#visit_function</a>
+    
+    <li ><a href="#method-i-visit_if">#visit_if</a>
+    
+    <li ><a href="#method-i-visit_import">#visit_import</a>
+    
+    <li ><a href="#method-i-visit_media">#visit_media</a>
+    
+    <li ><a href="#method-i-visit_mixin">#visit_mixin</a>
+    
+    <li ><a href="#method-i-visit_mixindef">#visit_mixindef</a>
+    
+    <li ><a href="#method-i-visit_prop">#visit_prop</a>
+    
+    <li ><a href="#method-i-visit_return">#visit_return</a>
+    
+    <li ><a href="#method-i-visit_root">#visit_root</a>
+    
+    <li ><a href="#method-i-visit_rule">#visit_rule</a>
+    
+    <li ><a href="#method-i-visit_supports">#visit_supports</a>
+    
+    <li ><a href="#method-i-visit_variable">#visit_variable</a>
+    
+    <li ><a href="#method-i-visit_warn">#visit_warn</a>
+    
+    <li ><a href="#method-i-visit_while">#visit_while</a>
+    
+    <li ><a href="#method-i-with_environment">#with_environment</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Sass::Tree::Visitors::Perform">
+  <h1 id="class-Sass::Tree::Visitors::Perform" class="class">
+    class Sass::Tree::Visitors::Perform
+  </h1>
+
+  <section class="description">
+    
+<p>A visitor for converting a dynamic <a href="../../../Sass.html">Sass</a>
+tree into a static <a href="../../../Sass.html">Sass</a> tree.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@comment</p>
+
+<pre>rubocop:enable MethodLength</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@environment</span> = <span class="ruby-identifier">env</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-perform_arguments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">perform_arguments</span><span
+            class="method-args">(callable, args, splat) { |env| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@api private @comment</p>
+
+<pre>rubocop:disable MethodLength</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="perform_arguments-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">perform_arguments</span>(<span class="ruby-identifier">callable</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">splat</span>)
+  <span class="ruby-identifier">desc</span> = <span class="ruby-node">&quot;#{callable.type.capitalize} #{callable.name}&quot;</span>
+  <span class="ruby-identifier">downcase_desc</span> = <span class="ruby-node">&quot;#{callable.type} #{callable.name}&quot;</span>
+
+  <span class="ruby-comment"># All keywords are contained in splat.keywords for consistency,</span>
+  <span class="ruby-comment"># even if there were no splats passed in.</span>
+  <span class="ruby-identifier">old_keywords_accessed</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">keywords_accessed</span>
+  <span class="ruby-identifier">keywords</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">keywords</span>
+  <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">keywords_accessed</span> = <span class="ruby-identifier">old_keywords_accessed</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">unknown_args</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">array_minus</span>(<span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">keys</span>,
+        <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">var</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">underscored_name</span>})
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">unknown_args</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span>.<span class="ruby-identifier">underscored_name</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Argument $#{callable.splat.name} of #{downcase_desc} &quot;</span> <span class="ruby-operator">+</span>
+                                    <span class="ruby-string">&quot;cannot be used as a named argument.&quot;</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">unknown_args</span>.<span class="ruby-identifier">any?</span>
+        <span class="ruby-identifier">description</span> = <span class="ruby-identifier">unknown_args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-string">'the following arguments:'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'an argument named'</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{desc} doesn't have #{description} &quot;</span> <span class="ruby-operator">+</span>
+                                    <span class="ruby-node">&quot;#{unknown_args.map {|name| &quot;$#{name}&quot;}.join ', '}.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">keyword_exception</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># If there's no splat, raise the keyword exception immediately. The actual</span>
+  <span class="ruby-comment"># raising happens in the ensure clause at the end of this function.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">keyword_exception</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span>
+    <span class="ruby-identifier">takes</span> = <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">passed</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-node">&quot;#{desc} takes #{takes} argument#{'s' unless takes == 1} &quot;</span> <span class="ruby-operator">+</span>
+      <span class="ruby-node">&quot;but #{passed} #{passed == 1 ? 'was' : 'were'} passed.&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">splat_sep</span> = <span class="ruby-value">:comma</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">splat</span>
+    <span class="ruby-identifier">args</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-identifier">splat_sep</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">separator</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">env</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">callable</span>.<span class="ruby-identifier">environment</span>)
+  <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">var</span>, <span class="ruby-identifier">default</span>), <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">var</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{desc} was passed argument $#{var.name} &quot;</span> <span class="ruby-operator">+</span>
+                                  <span class="ruby-string">&quot;both by position and by name.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">value</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">var</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">value</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">default</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">env</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{desc} is missing argument #{var.inspect}.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">env</span>.<span class="ruby-identifier">set_local_var</span>(<span class="ruby-identifier">var</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span>
+    <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">callable</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-operator">||</span> []
+    <span class="ruby-identifier">arg_list</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">ArgList</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rest</span>, <span class="ruby-identifier">keywords</span>, <span class="ruby-identifier">splat_sep</span>)
+    <span class="ruby-identifier">arg_list</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">env</span>.<span class="ruby-identifier">options</span>
+    <span class="ruby-identifier">env</span>.<span class="ruby-identifier">set_local_var</span>(<span class="ruby-identifier">callable</span>.<span class="ruby-identifier">splat</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">arg_list</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">env</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-comment"># If there's a keyword exception, we don't want to throw it immediately,</span>
+  <span class="ruby-comment"># because the invalid keywords may be part of a glob argument that should be</span>
+  <span class="ruby-comment"># passed on to another function. So we only raise it if we reach the end of</span>
+  <span class="ruby-comment"># this function *and* the keywords attached to the argument list glob object</span>
+  <span class="ruby-comment"># haven't been accessed.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># The keyword exception takes precedence over any Sass errors, but not over</span>
+  <span class="ruby-comment"># non-Sass exceptions.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">keyword_exception</span> <span class="ruby-operator">&amp;&amp;</span>
+      <span class="ruby-operator">!</span>(<span class="ruby-identifier">arg_list</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arg_list</span>.<span class="ruby-identifier">keywords_accessed</span>) <span class="ruby-operator">&amp;&amp;</span>
+      (<span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>))
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">keyword_exception</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-perform_splat" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">perform_splat</span><span
+            class="method-args">(splat, performed_keywords, kwarg_splat, environment)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@api private @return [Sass::Script::Value::ArgList]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="perform_splat-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">perform_splat</span>(<span class="ruby-identifier">splat</span>, <span class="ruby-identifier">performed_keywords</span>, <span class="ruby-identifier">kwarg_splat</span>, <span class="ruby-identifier">environment</span>)
+  <span class="ruby-identifier">args</span>, <span class="ruby-identifier">kwargs</span>, <span class="ruby-identifier">separator</span> = [], <span class="ruby-keyword">nil</span>, <span class="ruby-value">:comma</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">splat</span>
+    <span class="ruby-identifier">splat</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">environment</span>)
+    <span class="ruby-identifier">separator</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">separator</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">separator</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">ArgList</span>)
+      <span class="ruby-identifier">args</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">to_a</span>
+      <span class="ruby-identifier">kwargs</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">keywords</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Map</span>)
+      <span class="ruby-identifier">kwargs</span> = <span class="ruby-identifier">arg_hash</span>(<span class="ruby-identifier">splat</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">args</span> = <span class="ruby-identifier">splat</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">kwargs</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span><span class="ruby-operator">::</span><span class="ruby-constant">NormalizedMap</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">kwargs</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">performed_keywords</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">kwarg_splat</span>
+    <span class="ruby-identifier">kwarg_splat</span> = <span class="ruby-identifier">kwarg_splat</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-identifier">environment</span>)
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">kwarg_splat</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Map</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Variable keyword arguments must be a map &quot;</span> <span class="ruby-operator">+</span>
+                                  <span class="ruby-node">&quot;(was #{kwarg_splat.inspect}).&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">kwargs</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">arg_hash</span>(<span class="ruby-identifier">kwarg_splat</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">ArgList</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">kwargs</span>, <span class="ruby-identifier">separator</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit</span><span
+            class="method-args">(root, environment = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param root [Tree::Node] The root node of the tree to visit. @param
+environment [Sass::Environment] The lexical environment. @return
+[Tree::Node] The resulting tree of static nodes.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">environment</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">environment</span>).<span class="ruby-identifier">send</span>(<span class="ruby-value">:visit</span>, <span class="ruby-identifier">root</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-visit_atroot" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_atroot</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets a variable that indicates that the first level of rule nodes shouldn’t
+include the parent selector by default.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_atroot-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_atroot</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span>
+    <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SCSS</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span>),
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>], <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_type</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_static_at_root_query</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_type</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span> = <span class="ruby-value">:without</span>, [<span class="ruby-string">'rule'</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">old_at_root_without_rule</span> = <span class="ruby-ivar">@at_root_without_rule</span>
+  <span class="ruby-ivar">@at_root_without_rule</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">exclude?</span>(<span class="ruby-string">'rule'</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@at_root_without_rule</span> = <span class="ruby-identifier">old_at_root_without_rule</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_children" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_children</span><span
+            class="method-args">(parent)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Keeps track of the current environment.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Base.html#method-i-visit_children">Sass::Tree::Visitors::Base#visit_children</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="visit_children-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_children</span>(<span class="ruby-identifier">parent</span>)
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span> = <span class="ruby-keyword">super</span>.<span class="ruby-identifier">flatten</span>
+    <span class="ruby-identifier">parent</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_comment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_comment</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes this node from the tree if it’s a silent comment.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_comment-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 187</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_comment</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">invisible?</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span> = <span class="ruby-identifier">run_interp_no_strip</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\([\#])/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_content" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_content</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit_content-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_content</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">content</span>, <span class="ruby-identifier">content_env</span> = <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">content</span>
+  <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">with_mixin</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>, <span class="ruby-string">'@content'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">trace_node</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Tree</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceNode</span>.<span class="ruby-identifier">from_node</span>(<span class="ruby-string">'@content'</span>, <span class="ruby-identifier">node</span>)
+    <span class="ruby-identifier">content_env</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">content_env</span>)
+    <span class="ruby-identifier">content_env</span>.<span class="ruby-identifier">caller</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>)
+    <span class="ruby-identifier">with_environment</span>(<span class="ruby-identifier">content_env</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">trace_node</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">content</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">dup</span>)}.<span class="ruby-identifier">flatten</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">trace_node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">modify_backtrace</span>(<span class="ruby-value">:mixin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'@content'</span>, <span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">add_backtrace</span>(<span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_cssimport" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_cssimport</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit_cssimport-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 488</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_cssimport</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_uri</span> = <span class="ruby-identifier">run_interp</span>([<span class="ruby-identifier">node</span>.<span class="ruby-identifier">uri</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SCSS</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span>),
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>], <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_query</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_media_query_list</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_debug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_debug</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prints the expression to STDERR.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_debug-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_debug</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">res</span> = <span class="ruby-identifier">res</span>.<span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">res</span> = <span class="ruby-identifier">res</span>.<span class="ruby-identifier">to_sass</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>
+    <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">sass_warn</span> <span class="ruby-node">&quot;#{node.filename}:#{node.line} DEBUG: #{res}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">sass_warn</span> <span class="ruby-node">&quot;Line #{node.line} DEBUG: #{res}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_directive</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit_directive-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 467</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_directive</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span> = <span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}.<span class="ruby-identifier">flatten</span>
+    <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_each</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the child nodes once for each value in the list.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_each-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_each</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">list</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">list</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">vars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+        <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">set_local_var</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">vars</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">node</span>.<span class="ruby-identifier">vars</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_a</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">var</span>, <span class="ruby-identifier">sub_value</span>)<span class="ruby-operator">|</span>
+          <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">set_local_var</span>(<span class="ruby-identifier">var</span>, <span class="ruby-identifier">sub_value</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Null</span>.<span class="ruby-identifier">new</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_extend" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_extend</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs SassScript interpolation in the selector, and then parses the result
+into a {Sass::Selector::CommaSequence}.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_extend-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_extend</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SCSS</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">selector</span>),
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>], <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_selector</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_selector</span>
+  <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_for</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the child nodes once for each time through the loop, varying the
+variable each time.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_for-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_for</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">from</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-identifier">to</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-identifier">from</span>.<span class="ruby-identifier">assert_int!</span>
+  <span class="ruby-identifier">to</span>.<span class="ruby-identifier">assert_int!</span>
+
+  <span class="ruby-identifier">to</span> = <span class="ruby-identifier">to</span>.<span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">from</span>.<span class="ruby-identifier">numerator_units</span>, <span class="ruby-identifier">from</span>.<span class="ruby-identifier">denominator_units</span>)
+  <span class="ruby-identifier">direction</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">range</span> = <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">direction</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">from</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">direction</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">exclusive</span>)
+
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">range</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">set_local_var</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">var</span>,
+        <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">Number</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">direction</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">i</span>,
+          <span class="ruby-identifier">from</span>.<span class="ruby-identifier">numerator_units</span>, <span class="ruby-identifier">from</span>.<span class="ruby-identifier">denominator_units</span>))
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_function" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_function</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads the function into the environment.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_function-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_function</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">env</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">set_local_function</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>,
+    <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Callable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">args</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">splat</span>, <span class="ruby-identifier">env</span>,
+                       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>, <span class="ruby-operator">!</span><span class="ruby-value">:has_content</span>, <span class="ruby-string">&quot;function&quot;</span>))
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_if" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_if</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the child nodes if the conditional expression is true; otherwise,
+tries the else nodes.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_if-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_if</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>).<span class="ruby-identifier">to_bool</span>
+    <span class="ruby-keyword">yield</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">else</span>
+    <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">else</span>)
+  <span class="ruby-keyword">else</span>
+    []
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_import" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_import</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a static DirectiveNode if this is importing a CSS file, or parses
+and includes the imported <a href="../../../Sass.html">Sass</a> file.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_import-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_import</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">path</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">css_import?</span>)
+    <span class="ruby-identifier">resolved_node</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Tree</span><span class="ruby-operator">::</span><span class="ruby-constant">CssImportNode</span>.<span class="ruby-identifier">resolved</span>(<span class="ruby-node">&quot;url(#{path})&quot;</span>)
+    <span class="ruby-identifier">resolved_node</span>.<span class="ruby-identifier">source_range</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">source_range</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">resolved_node</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">imported_file</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">frames</span>.<span class="ruby-identifier">any?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">is_import?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:filename</span>]}
+    <span class="ruby-identifier">handle_import_loop!</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">with_import</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">root</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_tree</span>
+      <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Tree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitors</span><span class="ruby-operator">::</span><span class="ruby-constant">CheckNesting</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">root</span>)
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}.<span class="ruby-identifier">flatten</span>
+      <span class="ruby-identifier">node</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">modify_backtrace</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">imported_file</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:filename</span>])
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">add_backtrace</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_media" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_media</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit_media-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_media</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SCSS</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">query</span>),
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>], <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_query</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_media_query_list</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_mixin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_mixin</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs a mixin.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_mixin-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_mixin</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">with_mixin</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">mixin</span> = <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">mixin</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Undefined mixin '#{node.name}'.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mixin</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">any?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">mixin</span>.<span class="ruby-identifier">has_content</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">%Q{Mixin &quot;#{node.name}&quot; does not accept a content block.}</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">args</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)}
+    <span class="ruby-identifier">keywords</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">map_vals</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">keywords</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)}
+    <span class="ruby-identifier">splat</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">perform_splat</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">splat</span>, <span class="ruby-identifier">keywords</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kwarg_splat</span>, <span class="ruby-ivar">@environment</span>)
+
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">perform_arguments</span>(<span class="ruby-identifier">mixin</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">splat</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">env</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">env</span>.<span class="ruby-identifier">caller</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>)
+      <span class="ruby-identifier">env</span>.<span class="ruby-identifier">content</span> = [<span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>, <span class="ruby-ivar">@environment</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">has_children</span>
+
+      <span class="ruby-identifier">trace_node</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Tree</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceNode</span>.<span class="ruby-identifier">from_node</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span>)
+      <span class="ruby-identifier">with_environment</span>(<span class="ruby-identifier">env</span>) {<span class="ruby-identifier">trace_node</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">mixin</span>.<span class="ruby-identifier">tree</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}.<span class="ruby-identifier">flatten</span>}
+      <span class="ruby-identifier">trace_node</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">modify_backtrace</span>(<span class="ruby-value">:mixin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">add_backtrace</span>(<span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_mixindef" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_mixindef</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads a mixin into the environment.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_mixindef-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_mixindef</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">env</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">set_local_mixin</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>,
+    <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Callable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">args</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">splat</span>, <span class="ruby-identifier">env</span>,
+                       <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">has_content</span>, <span class="ruby-string">&quot;mixin&quot;</span>))
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_prop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_prop</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs any SassScript that may be embedded in a property.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_prop-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_prop</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_name</span> = <span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">val</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_value</span> = <span class="ruby-identifier">val</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value_source_range</span> = <span class="ruby-identifier">val</span>.<span class="ruby-identifier">source_range</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">source_range</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_return" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_return</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the value of the expression.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_return-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_return</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">throw</span> <span class="ruby-value">:_sass_return</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_root</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the options on the environment if this is the top-level root.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_root-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_root</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">sass_template</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">template</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_rule" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_rule</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs SassScript interpolation in the selector, and then parses the result
+into a {Sass::Selector::CommaSequence}.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_rule-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_rule</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">old_at_root_without_rule</span>, <span class="ruby-ivar">@at_root_without_rule</span> = <span class="ruby-ivar">@at_root_without_rule</span>, <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">SCSS</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">run_interp</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">rule</span>),
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:importer</span>], <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parsed_rules</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse_selector</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_rules</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parsed_rules</span>.<span class="ruby-identifier">resolve_parent_refs</span>(
+    <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">selector</span>, <span class="ruby-operator">!</span><span class="ruby-identifier">old_at_root_without_rule</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">stack_trace</span> = <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:trace_selectors</span>]
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">selector</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">resolved_rules</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)}.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@at_root_without_rule</span> = <span class="ruby-identifier">old_at_root_without_rule</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_supports" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_supports</span><span
+            class="method-args">(node) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit_supports-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 482</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_supports</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">condition</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">condition</span>.<span class="ruby-identifier">deep_copy</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">condition</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_variable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_variable</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads the new variable value into the environment.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_variable-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 415</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_variable</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-identifier">env</span> = <span class="ruby-ivar">@environment</span>
+    <span class="ruby-identifier">identifier</span> = [<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">line</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">global</span>
+      <span class="ruby-identifier">env</span> = <span class="ruby-identifier">env</span>.<span class="ruby-identifier">global_env</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">env</span>.<span class="ruby-identifier">parent</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">env</span>.<span class="ruby-identifier">is_var_global?</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span>
+        <span class="ruby-operator">!</span><span class="ruby-identifier">env</span>.<span class="ruby-identifier">global_env</span>.<span class="ruby-identifier">global_warning_given</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">identifier</span>)
+      <span class="ruby-identifier">env</span>.<span class="ruby-identifier">global_env</span>.<span class="ruby-identifier">global_warning_given</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">identifier</span>)
+      <span class="ruby-identifier">var_expr</span> = <span class="ruby-node">&quot;$#{node.name}: #{node.expr.to_sass(env.options)} !global&quot;</span>
+      <span class="ruby-identifier">var_expr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; !default&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">guarded</span>
+      <span class="ruby-identifier">location</span> = <span class="ruby-node">&quot;on line #{node.line}&quot;</span>
+      <span class="ruby-identifier">location</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; of #{node.filename}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">filename</span>
+      <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">sass_warn</span> <span class="ruby-value">&lt;&lt;WARNING
+DEPRECATION WARNING #{location}:
+Assigning to global variable &quot;$#{node.name}&quot; by default is deprecated.
+In future versions of Sass, this will create a new local variable.
+If you want to assign to the global variable, use &quot;#{var_expr}&quot; instead.
+Note that this will be incompatible with Sass 3.2.
+WARNING</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">var</span> = <span class="ruby-identifier">env</span>.<span class="ruby-identifier">var</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">guarded</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">var</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">var</span>.<span class="ruby-identifier">null?</span>
+    <span class="ruby-identifier">val</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">source_range</span>
+      <span class="ruby-identifier">val</span>.<span class="ruby-identifier">source_range</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">source_range</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">val</span>.<span class="ruby-identifier">source_range</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">source_range</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">env</span>.<span class="ruby-identifier">set_var</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">val</span>)
+    []
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_warn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_warn</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prints the expression to STDERR with a stylesheet trace.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_warn-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 449</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_warn</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">res</span>.<span class="ruby-identifier">value</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Script</span><span class="ruby-operator">::</span><span class="ruby-constant">Value</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;WARNING: #{res}\n         &quot;</span>
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@environment</span>.<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&quot;\n         &quot;</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">sass_warn</span> <span class="ruby-identifier">msg</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-visit_while" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit_while</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs the child nodes until the continuation expression becomes false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="visit_while-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 459</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit_while</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">children</span> = []
+  <span class="ruby-identifier">with_environment</span> <span class="ruby-constant">Sass</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@environment</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">children</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">c</span>)} <span class="ruby-keyword">while</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">expr</span>.<span class="ruby-identifier">perform</span>(<span class="ruby-ivar">@environment</span>).<span class="ruby-identifier">to_bool</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-with_environment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">with_environment</span><span
+            class="method-args">(env) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs a block of code with the current environment replaced with the given
+one.</p>
+
+<p>@param env [Sass::Environment] The new environment for the duration of the
+block. @yield A block in which the environment is set to `env`. @return
+[Object] The return value of the block.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="with_environment-source">
+            <pre><span class="ruby-comment"># File lib/sass/tree/visitors/perform.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_environment</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">old_env</span>, <span class="ruby-ivar">@environment</span> = <span class="ruby-ivar">@environment</span>, <span class="ruby-identifier">env</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@environment</span> = <span class="ruby-identifier">old_env</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

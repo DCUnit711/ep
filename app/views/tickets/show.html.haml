@@ -1,0 +1,72 @@
+.panel.panel-warning
+  .panel-heading
+    %strong Ticket #{@ticket.id}
+    .pull-right
+      %b Initiated by:
+      = @ticket.created.name
+  .panel-body{ :id => 'accordion'}
+    .list-group
+      - @ticket.ticket_issues.each do |issue|
+        .list-group-item{class: issue_status(issue)}
+          %table{width: '100%'}
+            %tr
+              %td.col-lg-1 
+                %b Issue
+                %br= issue.issue_type.issue unless issue.issue_type.nil?
+              %td.col-lg-4 
+                %b Description
+                %br= issue.description
+              - if issue_resolved(issue)
+                %td.col-lg-3 
+                  %b Date Resolved
+                  %br= issue.resolved_at.strftime("%B %d, %Y %l:%M %p" )
+                %td.col-lg-3 
+                  %b Resolved By
+                  %br= issue.resolved.name unless issue.resolved.nil?
+              - else
+                %td.col-lg-3 
+                  %b Date Submitted
+                  %br= issue.created_at.strftime("%B %d, %Y %l:%M %p" )
+                %td.col-lg-3
+                  .btn.btn-success{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapse#{issue.id}"}
+                    Resolve Issue
+        .input-group-collapse.collapse{id: "collapse#{issue.id}"}
+          .container
+            %br
+            = simple_form_for issue, defaults:{ label:false } do |f|
+              .col-lg-4
+                .input-group
+                  .input-group-addon Completed by
+                  = f.input :resolved_employee_id, collection: Employee.all, label_method: :name, input_html:{class: 'form-control'}
+              .col-lg-6
+                .form-group
+                  = f.input :resolution_notes, placeholder: 'Notes on how you solved the problem- if needed', input_html:{class: 'form-control'}
+              .col-lg-1
+                .btn-group.pull-right
+                  = f.button :submit, 'Submit', class: 'btn btn-primary'
+                = f.hidden_field :resolved_at, value: Time.now
+          %br
+= simple_form_for ([@ticket, @ticket.ticket_issues.build]), defaults:{ label:false } do |f|
+  .row
+    .col-lg-6
+      .input-group
+        .input-group-addon
+          Issue Type
+        = f.input :issue_type_id, collection: IssueType.where(device_id: Device.where( device_type: @ticket.ticketable_type)), label_method: :issue, collection_placeholder: 'Issue Type', input_html:{class: 'form-control'}
+    .col-lg-6
+      .input-group
+        .input-group-addon
+          Received method
+        = f.input :issue_received_method_id, collection: IssueReceivedMethod.all, label_method: :method, input_html:{class: 'form-control'}
+      %p
+    .col-lg-12
+      .form-group
+        = f.input :description, placeholder: 'Any additional description', input_html:{class: 'form-control'}
+  .row
+    .col-lg-1.col-md-offset-11
+      .btn-group.pull-right
+        = f.button :submit, 'Add issue to Ticket', class: 'btn btn-primary'
+
+/ = link_to 'Edit', edit_ticket_path(@ticket)
+/ \|
+/ = link_to 'Back', tickets_path

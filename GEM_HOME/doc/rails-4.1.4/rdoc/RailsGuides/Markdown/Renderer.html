@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: RailsGuides::Markdown::Renderer</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../guides/rails_guides/markdown/renderer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="guides/rails_guides/markdown/renderer.rb">guides/rails_guides/markdown/renderer.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Redcarpet::Render::HTML</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-block_code">#block_code</a></li>
+          
+          <li><a href="#method-i-header">#header</a></li>
+          
+          <li><a href="#method-i-paragraph">#paragraph</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../guides/Rakefile.html">Rakefile</a></li>
+        
+          <li class="file"><a href="../../guides/assets/images/icons/README.html">README</a></li>
+        
+          <li class="file"><a href="../../guides/code/getting_started/Gemfile.html">Gemfile</a></li>
+        
+          <li class="file"><a href="../../guides/code/getting_started/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../../guides/code/getting_started/Rakefile.html">Rakefile</a></li>
+        
+          <li class="file"><a href="../../guides/code/getting_started/public/robots_txt.html">robots.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../RailsGuides.html">RailsGuides</a></li>
+        
+          <li><a href="../../RailsGuides/Generator.html">RailsGuides::Generator</a></li>
+        
+          <li><a href="../../RailsGuides/Helpers.html">RailsGuides::Helpers</a></li>
+        
+          <li><a href="../../RailsGuides/Indexer.html">RailsGuides::Indexer</a></li>
+        
+          <li><a href="../../RailsGuides/Levenshtein.html">RailsGuides::Levenshtein</a></li>
+        
+          <li><a href="../../RailsGuides/Markdown.html">RailsGuides::Markdown</a></li>
+        
+          <li><a href="../../RailsGuides/Markdown/Renderer.html">RailsGuides::Markdown::Renderer</a></li>
+        
+          <li><a href="../../RailsGuides/Validator.html">RailsGuides::Validator</a></li>
+        
+          <li><a href="../../ActiveSupport.html">ActiveSupport</a></li>
+        
+          <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+        
+          <li><a href="../../Blog.html">Blog</a></li>
+        
+          <li><a href="../../Blog/Application.html">Blog::Application</a></li>
+        
+          <li><a href="../../ApplicationController.html">ApplicationController</a></li>
+        
+          <li><a href="../../ApplicationHelper.html">ApplicationHelper</a></li>
+        
+          <li><a href="../../BugTest.html">BugTest</a></li>
+        
+          <li><a href="../../Comment.html">Comment</a></li>
+        
+          <li><a href="../../CommentTest.html">CommentTest</a></li>
+        
+          <li><a href="../../CommentsController.html">CommentsController</a></li>
+        
+          <li><a href="../../CommentsControllerTest.html">CommentsControllerTest</a></li>
+        
+          <li><a href="../../CommentsHelper.html">CommentsHelper</a></li>
+        
+          <li><a href="../../CommentsHelperTest.html">CommentsHelperTest</a></li>
+        
+          <li><a href="../../CreateComments.html">CreateComments</a></li>
+        
+          <li><a href="../../CreatePosts.html">CreatePosts</a></li>
+        
+          <li><a href="../../Kindle.html">Kindle</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+          <li><a href="../../Post.html">Post</a></li>
+        
+          <li><a href="../../PostTest.html">PostTest</a></li>
+        
+          <li><a href="../../PostsController.html">PostsController</a></li>
+        
+          <li><a href="../../PostsControllerTest.html">PostsControllerTest</a></li>
+        
+          <li><a href="../../PostsHelper.html">PostsHelper</a></li>
+        
+          <li><a href="../../PostsHelperTest.html">PostsHelperTest</a></li>
+        
+          <li><a href="../../TestApp.html">TestApp</a></li>
+        
+          <li><a href="../../TestController.html">TestController</a></li>
+        
+          <li><a href="../../WelcomeController.html">WelcomeController</a></li>
+        
+          <li><a href="../../WelcomeControllerTest.html">WelcomeControllerTest</a></li>
+        
+          <li><a href="../../WelcomeHelper.html">WelcomeHelper</a></li>
+        
+          <li><a href="../../WelcomeHelperTest.html">WelcomeHelperTest</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">RailsGuides::Markdown::Renderer</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(options={})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File guides/rails_guides/markdown/renderer.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="block_code-method" class="method-detail ">
+          <a name="method-i-block_code"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">block_code</span><span
+              class="method-args">(code, language)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="block_code-source">
+<pre>
+<span class="ruby-comment"># File guides/rails_guides/markdown/renderer.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">block_code</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">language</span>)
+  <span class="ruby-string">&lt;div class=&quot;code_container&quot;&gt;&lt;pre class=&quot;brush: #{brush_for(language)}; gutter: false; toolbar: false&quot;&gt;#{ERB::Util.h(code)}&lt;/pre&gt;&lt;/div&gt;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- block_code-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- block_code-method -->
+
+      
+        <div id="header-method" class="method-detail ">
+          <a name="method-i-header"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">header</span><span
+              class="method-args">(text, header_level)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="header-source">
+<pre>
+<span class="ruby-comment"># File guides/rails_guides/markdown/renderer.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">header</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">header_level</span>)
+  <span class="ruby-comment"># Always increase the heading level by, so we can use h1, h2 heading in the document</span>
+  <span class="ruby-identifier">header_level</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-node">%(&lt;h#{header_level}&gt;#{text}&lt;/h#{header_level}&gt;)</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- header-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- header-method -->
+
+      
+        <div id="paragraph-method" class="method-detail ">
+          <a name="method-i-paragraph"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">paragraph</span><span
+              class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="paragraph-source">
+<pre>
+<span class="ruby-comment"># File guides/rails_guides/markdown/renderer.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paragraph</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^(TIP|IMPORTANT|CAUTION|WARNING|NOTE|INFO|TODO)[.:](.*?)/</span>
+    <span class="ruby-identifier">convert_notes</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\[&lt;sup&gt;(\d+)\]:&lt;\/sup&gt; (.+)$/</span>
+    <span class="ruby-identifier">linkback</span> = <span class="ruby-node">%(&lt;a href=&quot;#footnote-#{$1}-ref&quot;&gt;&lt;sup&gt;#{$1}&lt;/sup&gt;&lt;/a&gt;)</span>
+    <span class="ruby-node">%(&lt;p class=&quot;footnote&quot; id=&quot;footnote-#{$1}&quot;&gt;#{linkback} #{$2}&lt;/p&gt;)</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-identifier">convert_footnotes</span>(<span class="ruby-identifier">text</span>)
+    <span class="ruby-node">&quot;&lt;p&gt;#{text}&lt;/p&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- paragraph-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- paragraph-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

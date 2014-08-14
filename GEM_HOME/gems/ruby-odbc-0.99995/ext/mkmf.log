@@ -1,0 +1,281 @@
+have_header: checking for version.h... -------------------- no
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.      -lmsvcrt-ruby191  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+"gcc -E -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+conftest.c:5:21: fatal error: version.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <version.h>
+/* end */
+
+--------------------
+
+have_header: checking for sql.h... -------------------- yes
+
+"gcc -E -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <sql.h>
+/* end */
+
+--------------------
+
+have_header: checking for sqlext.h... -------------------- yes
+
+"gcc -E -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <sqlext.h>
+/* end */
+
+--------------------
+
+have_type: checking for SQLTCHAR in windows.h,sqltypes.h... -------------------- yes
+
+"gcc -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: #include <windows.h>
+ 6: #include <sqltypes.h>
+ 7: 
+ 8: /*top*/
+ 9: typedef SQLTCHAR conftest_type;
+10: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for SQLLEN in windows.h,sqltypes.h... -------------------- yes
+
+"gcc -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: #include <windows.h>
+ 6: #include <sqltypes.h>
+ 7: 
+ 8: /*top*/
+ 9: typedef SQLLEN conftest_type;
+10: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for SQLULEN in windows.h,sqltypes.h... -------------------- yes
+
+"gcc -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: #include <windows.h>
+ 6: #include <sqltypes.h>
+ 7: 
+ 8: /*top*/
+ 9: typedef SQLULEN conftest_type;
+10: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_header: checking for odbcinst.h... -------------------- yes
+
+"gcc -E -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <odbcinst.h>
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lodbc32... -------------------- yes
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.      -lmsvcrt-ruby191 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:53: error: 'main' undeclared (first use in this function)
+conftest.c:7:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.      -lmsvcrt-ruby191 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:1: warning: implicit declaration of function 'main'
+conftest.c:10:6: warning: 'argc' is used uninitialized in this function
+conftest.c:7:5: note: 'argc' was declared here
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { main(); return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lodbccp32... -------------------- yes
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.     -lodbc32  -lmsvcrt-ruby191 -lodbccp32 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:53: error: 'main' undeclared (first use in this function)
+conftest.c:7:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.     -lodbc32  -lmsvcrt-ruby191 -lodbccp32 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:1: warning: implicit declaration of function 'main'
+conftest.c:10:6: warning: 'argc' is used uninitialized in this function
+conftest.c:7:5: note: 'argc' was declared here
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { main(); return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -luser32... -------------------- yes
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.     -lodbccp32 -lodbc32  -lmsvcrt-ruby191 -luser32 -lodbccp32 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:53: error: 'main' undeclared (first use in this function)
+conftest.c:7:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+"gcc -o conftest -IC:/Ruby19/include/ruby-1.9.1/i386-mingw32 -IC:/Ruby19/include/ruby-1.9.1/ruby/backward -IC:/Ruby19/include/ruby-1.9.1 -I. -DFD_SETSIZE=2048  -DFD_SETSIZE=2048  -O3 -fno-omit-frame-pointer -g -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -LC:/Ruby19/lib -L.     -lodbccp32 -lodbc32  -lmsvcrt-ruby191 -luser32 -lodbccp32 -lodbc32  -lshell32 -lws2_32 -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:7:1: warning: implicit declaration of function 'main'
+conftest.c:10:6: warning: 'argc' is used uninitialized in this function
+conftest.c:7:5: note: 'argc' was declared here
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: int t() { main(); return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+

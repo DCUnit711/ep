@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"utc_offset:EFI"&TZInfo::TimezoneOffset#utc_offset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The base offset of the timezone from UTC in seconds.:encoding"IBM437:
+@file0FI""lib/tzinfo/timezone_offset.rb;@

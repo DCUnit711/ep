@@ -1,0 +1,17 @@
+.panel.panel-primary
+  .panel-heading
+    %h4 Printer Connection Info
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Print station:
+        %td= link_to @ps_connection_information.print_station.location, print_station_path(@ps_connection_information.print_station) unless @ps_connection_information.print_station_id.nil?
+      %tr
+        %th Ip address:
+        %td= @ps_connection_information.ip_address
+      %tr
+        %th Printer Jack:
+        %td= @ps_connection_information.jack
+      %tr
+        %th Pharos:
+        %td= @ps_connection_information.pharos

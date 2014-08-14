@@ -1,0 +1,66 @@
+.panel.panel-primary
+  .panel-heading
+    %h4
+      Open Tickets
+      %span.badge.pull-right
+        =count_open_tickets(@tickets)
+  .panel-group{ :id => 'accordion'}
+    -if count_open_tickets(@tickets) == 0
+      %table.table
+        %th.success
+          No Open Tickets
+          .glyphicon.glyphicon-thumbs-up
+    -else
+      - @tickets.each do |ticket|
+        -if !ticket_resolved(ticket)
+          .panel{class: ticket_status(ticket, 'panel')}
+            %table.table
+              %tbody
+                %tr{class: ticket_status(ticket, 'none')}
+                  %td{style: 'padding-left:1%; width:15%'}
+                    %h4{style:'margin:0px'}
+                      %b Ticket #{ticket.id}
+                      %p{style: 'margin:0px'}
+                        = ticketable_info(ticket)
+                  %td{style: 'width:25%'}
+                    -if ticketable_info(ticket) == 'Printer'
+                      %b= ticket.ticketable.ps_connection_information.print_station.location unless ticket.ticketable.ps_connection_information.nil?
+                      %p=link_to ticket.ticketable.serial_number, ticket.ticketable
+                    -if ticketable_info(ticket) == 'Computer'
+                      %b= ticket.ticketable.print_station.location unless ticket.ticketable.print_station.nil?
+                      %p=link_to ticket.ticketable.service_tag, ticket.ticketable
+                    -if ticketable_info(ticket) == 'PrintStation'
+                      %b Print Station
+                      %p=link_to ticket.ticketable.location, ticket.ticketable
+                  %td{style: 'width:30%'}
+                    %strong Ticket type:
+                    %p
+                    = find_issue(ticket)
+                  %td{style: 'width:20%'}
+                    %strong Submitted by:
+                    %p
+                    = ticket.created.name
+                  %td{style: 'vertical-align:middle; width:10%'}
+                    %a.glyphicon.glyphicon-chevron-down{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapse_open#{ticket.id}"}
+            .panel.panel-collapse.collapse{id: "collapse_open#{ticket.id}"}
+              %table.table.table-condensed{id: 'accordion_issue'}
+                - ticket.ticket_issues.each do |issue|
+                  %tbody{style: 'font-size:14px'}
+                    %tr{class: issue_status(issue)}
+                      %td{style: 'padding-left:2%'}
+                        %b Issue
+                        %br= issue.issue_type.issue unless issue.issue_type.nil?
+                      %td
+                        %b Description
+                        %br= issue.description
+                      - if issue_resolved(issue)
+                        %td
+                          %b Date Resolved
+                          %br= issue.resolved_at.strftime("%B %d, %Y %l:%M %p" )
+                        %td
+                          %b Resolved By
+                          %br= issue.resolved.name unless issue.resolved.nil?
+                      - else
+                        %td 
+                          %b Date Submitted
+                          %br= issue.created_at.strftime("%B %d, %Y %l:%M %p" ) unless issue.created_at.nil?

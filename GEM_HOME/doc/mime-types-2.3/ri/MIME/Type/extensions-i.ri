@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"extensions:EFI"MIME::Type#extensions;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KThe list of extensions which are known to be used for this MIME::Type.:encoding"IBM437I"LNon-array values will be coerced into an array with #to_a. Array values;@I"Fwill be flattened, +nil+ values removed, sorted, and made unique.;@:
+@file0FI"lib/mime/type.rb;@

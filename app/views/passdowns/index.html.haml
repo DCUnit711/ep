@@ -1,0 +1,24 @@
+%h1 Passdowns
+= link_to new_passdown_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Passdown
+%hr
+%table.table.table-hover
+  %thead
+    %tr
+      %th Passdown
+      %th Employee
+      %th Date
+      %th
+
+  %tbody
+    - @passdowns.each do |passdown|
+      %tr
+        %td= passdown.body
+        %td= passdown.employee.name
+        %td= passdown.created_at.strftime("%B %d, %Y %l:%M %p")
+        %td
+          = link_to edit_passdown_path(passdown), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to passdown, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

@@ -1,0 +1,112 @@
+%h1 Print Stations
+= link_to new_print_station_path, class: 'btn btn-primary' do
+  %i.glyphicon.glyphicon-plus
+  Print Station
+%hr
+.panel.panel-danger
+  .panel-heading
+    Down Stations
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Location ID
+        %th Location
+        %th Building
+        %th Room number
+        %th Copy Center
+        %th
+    %tbody
+      - @print_stations.each do |print_station|
+        - if print_station.status.status == "Down"
+          %tr
+            %td= link_to print_station.location_id, print_station_path(print_station)
+            %td= print_station.location
+            %td= print_station.building
+            %td= print_station.room_number
+            %td= link_to print_station.copy_center.location, copy_center_path(print_station.copy_center) unless print_station.copy_center.nil?
+            %td
+              = link_to edit_print_station_path(print_station), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to print_station, method: :delete, data: { confirm: 'Make sure to remove all IP Addresses before deleting Print Station' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash
+%hr
+.panel.panel-primary
+  .panel-heading
+    Active Stations
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Location ID
+        %th Location
+        %th Building
+        %th Room number
+        %th Copy Center
+        %th
+    %tbody
+      - @print_stations.each do |print_station|
+        - if print_station.status.status == "Active"
+          %tr
+            %td= link_to print_station.location_id, print_station_path(print_station)
+            %td= print_station.location
+            %td= print_station.building
+            %td= print_station.room_number
+            %td= link_to print_station.copy_center.location, copy_center_path(print_station.copy_center) unless print_station.copy_center.nil?
+            %td
+              = link_to edit_print_station_path(print_station), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to print_station, method: :delete, data: { confirm: 'Make sure to remove all IP Addresses before deleting Print Station' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash
+%hr
+.panel.panel-warning
+  .panel-heading
+    Suspended Stations
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Location ID
+        %th Location
+        %th Building
+        %th Room number
+        %th Copy Center
+        %th
+    %tbody
+      - @print_stations.each do |print_station|
+        - if print_station.status.status == "Suspended"
+          %tr
+            %td= link_to print_station.location_id, print_station_path(print_station)
+            %td= print_station.location
+            %td= print_station.building
+            %td= print_station.room_number
+            %td= link_to print_station.copy_center.location, copy_center_path(print_station.copy_center) unless print_station.copy_center.nil?
+            %td
+              = link_to edit_print_station_path(print_station), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to print_station, method: :delete, data: { confirm: 'Make sure to remove all IP Addresses before deleting Print Station' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash
+%hr
+.panel.panel-danger
+  .panel-heading
+    Removed Stations
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Location ID
+        %th Location
+        %th Building
+        %th Room number
+        %th Copy Center
+        %th
+    %tbody
+      - @print_stations.each do |print_station|
+        - if print_station.status.status == "Removed"
+          %tr
+            %td= link_to print_station.location_id, print_station_path(print_station)
+            %td= print_station.location
+            %td= print_station.building
+            %td= print_station.room_number
+            %td= link_to print_station.copy_center.location, copy_center_path(print_station.copy_center) unless print_station.copy_center.nil?
+            %td
+              = link_to edit_print_station_path(print_station), class: 'btn-sm' do
+                %i.glyphicon.glyphicon-pencil
+              = link_to print_station, method: :delete, data: { confirm: 'Make sure to remove all IP Addresses before deleting Print Station' }, class: 'btn-sm' do
+                %i.glyphicon.glyphicon-trash

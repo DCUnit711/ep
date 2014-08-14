@@ -1,0 +1,16 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Location
+      %th Phone number
+      %th
+  %tbody
+    - @toner_locations.each do |location|
+      %tr
+        %td= location.location
+        %td= location.phone_number
+        %td
+          = link_to edit_location_path(location), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

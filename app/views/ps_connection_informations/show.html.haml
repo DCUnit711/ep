@@ -1,0 +1,11 @@
+.row
+  .col-md-2
+    .btn-group
+      = link_to admin_index_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_ps_connection_information_path(@ps_connection_information), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+%hr
+.row
+  .col-md-3
+    =render 'ps_connection_info'

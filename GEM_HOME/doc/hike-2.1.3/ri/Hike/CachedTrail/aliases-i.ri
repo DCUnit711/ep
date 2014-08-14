@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"aliases:EFI"Hike::CachedTrail#aliases;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"I`CachedTrail#aliases` is an immutable `Hash` mapping an extension to:encoding"IBM437I"an `Array` of aliases.;@:
+@file0FI"lib/hike/cached_trail.rb;@

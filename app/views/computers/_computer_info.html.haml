@@ -1,0 +1,14 @@
+.panel.panel-primary
+  .panel-heading
+    %h4 #{@computer.service_tag}
+  %table.table.table-condensed.table-striped.table-hover
+    %tbody{style: 'font-size:14px'}
+      %tr
+        %th Model:
+        %td= @computer.computer_model.model unless @computer.computer_model.nil?
+      %tr
+        %th Image Date:
+        %td= @computer.computer_image.image unless @computer.computer_image.nil?
+      %tr
+        %th VGA/DVI:
+        %td= @computer.vga_dvi

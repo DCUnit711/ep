@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>File: README.rdoc [mime-types-2.3 Documentation]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./Contributing_rdoc.html">Contributing.rdoc</a></li>
+        
+          <li class="file"><a href="./History-Types_rdoc.html">History-Types.rdoc</a></li>
+        
+          <li class="file"><a href="./History_rdoc.html">History.rdoc</a></li>
+        
+          <li class="file"><a href="./Licence_rdoc.html">Licence.rdoc</a></li>
+        
+          <li class="file"><a href="./Manifest_txt.html">Manifest.txt</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./docs/COPYING_txt.html">COPYING.txt</a></li>
+        
+          <li class="file"><a href="./docs/artistic_txt.html">artistic.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./MIME.html">MIME</a></li>
+        
+          <li><a href="./MIME/Type.html">MIME::Type</a></li>
+        
+          <li><a href="./MIME/Type/InvalidContentType.html">MIME::Type::InvalidContentType</a></li>
+        
+          <li><a href="./MIME/Type/InvalidEncoding.html">MIME::Type::InvalidEncoding</a></li>
+        
+          <li><a href="./MIME/Types.html">MIME::Types</a></li>
+        
+          <li><a href="./MIME/Types/Cache.html">MIME::Types::Cache</a></li>
+        
+          <li><a href="./MIME/Types/Loader.html">MIME::Types::Loader</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>mime-types</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>home </p></td>
+<td>
+<p><a
+href="https://github.com/halostatue/mime-types/">github.com/halostatue/mime-types/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>code </p></td>
+<td>
+<p><a
+href="https://github.com/halostatue/mime-types/">github.com/halostatue/mime-types/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>bugs </p></td>
+<td>
+<p><a
+href="https://github.com/halostatue/mime-types/issues">github.com/halostatue/mime-types/issues</a></p>
+</td></tr><tr><td class="rdoc-term"><p>rdoc </p></td>
+<td>
+<p><a href="http://rdoc.info/gems/mime-types/">rdoc.info/gems/mime-types/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>continuous integration </p></td>
+<td>
+<p><a href="https://travis-ci.org/halostatue/mime-types"><img
+src="https://travis-ci.org/halostatue/mime-types.png" /></a></p>
+</td></tr><tr><td class="rdoc-term"><p>test coverage </p></td>
+<td>
+<p><a href="https://coveralls.io/r/halostatue/mime-types"><img
+src="https://coveralls.io/repos/halostatue/mime-types/badge.png"
+alt="Coverage Status" /></a></p>
+</td></tr></table>
+
+<h2>Description</h2>
+
+<p>The mime-types library provides a library and registry for information
+about <a href="MIME.html">MIME</a> content type definitions. It can be used
+to determine defined filename extensions for <a href="MIME.html">MIME</a>
+types, or to use filename extensions to look up the likely <a
+href="MIME.html">MIME</a> type definitions.</p>
+
+<p><a href="MIME.html">MIME</a> content types are used in MIME-compliant
+communications, as in e-mail or HTTP traffic, to indicate the type of
+content which is transmitted. The mime-types library provides the ability
+for detailed information about <a href="MIME.html">MIME</a> entities
+(provided as an enumerable collection of <a
+href="MIME/Type.html">MIME::Type</a> objects) to be determined and used
+programmatically. There are many types defined by RFCs and vendors, so the
+list is long but by definition incomplete; don't hesitate to to add
+additional type definitions (see <a
+href="Contributing_rdoc.html">Contributing.rdoc</a>). The primary sources
+for <a href="MIME.html">MIME</a> type definitions found in mime-types is
+the IANA collection of registrations (see below for the link), RFCs, and
+W3C recommendations.</p>
+
+<p>This is release 2.2, mostly changing how the <a href="MIME.html">MIME</a>
+type registry is updated from the IANA registry (the format of which was
+incompatibly changed shortly before this release) and taking advantage of
+the extra data available from IANA registry in the form of <a
+href="MIME/Type.html#attribute-i-xrefs">MIME::Type#xrefs</a>. In addition,
+the <a href="http://www.ltsw.se/knbase/internet/mime.htp">LTSW list</a> has
+been dropped as a supported list.</p>
+
+<p>As a reminder, mime-types 2.x is no longer compatible with Ruby 1.8 and
+mime-types 1.x is only being maintained for security issues. No new <a
+href="MIME.html">MIME</a> types or features will be added.</p>
+
+<p>mime-types (previously called <a href="MIME/Types.html">MIME::Types</a> for
+Ruby) was originally based on <a href="MIME/Types.html">MIME::Types</a> for
+Perl by Mark Overmeer, copyright 2001 - 2009. It is built to conform to the
+<a href="MIME.html">MIME</a> types of RFCs 2045 and 2231. It tracks the <a
+href="https://www.iana.org/assignments/media-types/media-types.xhtml">IANA
+Media Types registry</a> with some types added by the users of mime-types.</p>
+
+<h2>Synopsis</h2>
+
+<p><a href="MIME.html">MIME</a> types are used in <a href="MIME.html">MIME</a>
+entities, as in email or HTTP traffic. It is useful at times to have
+information available about <a href="MIME.html">MIME</a> types (or,
+inversely, about files). A <a href="MIME/Type.html">MIME::Type</a> stores
+the known information about one <a href="MIME.html">MIME</a> type.</p>
+
+<pre>require 'mime/types'
+
+plaintext = MIME::Types['text/plain']
+# returns [text/plain, text/plain]
+text      = plaintext.first
+puts text.media_type            # =&gt; 'text'
+puts text.sub_type              # =&gt; 'plain'
+
+puts text.extensions.join(&quot; &quot;)  # =&gt; 'txt asc c cc h hh cpp hpp dat hlp'
+
+puts text.encoding              # =&gt; quoted-printable
+puts text.binary?               # =&gt; false
+puts text.ascii?                # =&gt; true
+puts text.obsolete?             # =&gt; false
+puts text.registered?           # =&gt; true
+puts text == 'text/plain'       # =&gt; true
+puts MIME::Type.simplified('x-appl/x-zip')
+                                # =&gt; 'appl/zip'
+
+puts MIME::Types.any? { |type|
+  type.content_type == 'text/plain'
+}                               # =&gt; true
+puts MIME::Types.all?(&amp;:registered?)
+                                # =&gt; false</pre>
+
+<h2>mime-types Modified Semantic Versioning</h2>
+
+<p>The mime-types library has one version number, but this single version
+number tracks both API changes and registry data changes; this is not
+wholly compatible with all aspects of <a href="http://semver.org/">Semantic
+Versioning</a>; removing a <a href="MIME.html">MIME</a> type from the
+registry <b>could</b> be considered a breaking change under some
+interpretations of semantic versioning (as lookups for that particular type
+would no longer work by default).</p>
+
+<p>mime-types uses a modified semantic versioning scheme. Given the version
+MAJOR.MINOR:</p>
+<ol><li>
+<p>If an incompatible API (code) change is made, the MAJOR version will be
+incremented, MINOR will be set to zero, and PATCH will be reset to the
+implied zero.</p>
+</li><li>
+<p>If an API (code) feature is added that does not break compatibilty OR if
+there are <a href="MIME.html">MIME</a> types added, removed, or changed in
+the registry, the MINOR version will be incremented and PATCH will be reset
+to the implied zero.</p>
+</li><li>
+<p>If there is a bugfix to a feature added in the most recent MAJOR.MINOR
+release, OR if purely typographical errors are fixed in <a
+href="MIME.html">MIME</a> types, the implied PATCH value will be
+incremented resulting in MAJOR.MINOR.PATCH.</p>
+</li></ol>
+
+<p>In practical terms, there should be a MINOR release roughly monthly to
+track updated or changed <a href="MIME.html">MIME</a> types from the
+official IANA registry. This does not indicate when new API features have
+been added, but all minor versions of mime-types 2.x will be backwards
+compatible; the interfaces marked deprecated will not be removed until at
+least mime-types 3.x or possibly later.</p>
+
+<h2>Contributing</h2>
+
+<p>I value any contribution to mime-types you can provide: a bug report, a
+feature request, or code contributions.</p>
+
+<p>As mime-types is a mature codebase, there are a few guidelines:</p>
+<ul><li>
+<p>Code changes <b>will</b> <b>not</b> be accepted without tests. The test
+suite is written with <a
+href="https://github.com/seattlerb/minitest">Minitest</a>.</p>
+</li><li>
+<p>Match my coding style.</p>
+</li><li>
+<p>Use a thoughtfully-named topic branch that contains your change. Rebase
+your commits into logical chunks as necessary.</p>
+</li><li>
+<p>Use <a
+href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">quality
+commit messages</a>.</p>
+</li><li>
+<p>Do not change the version number; when your patch is accepted and a release
+is made, the version will be updated at that point.</p>
+</li><li>
+<p>Submit a GitHub pull request with your changes.</p>
+</li><li>
+<p>New or changed behaviours require new or updated documentation.</p>
+</li></ul>
+
+<h3>Adding or Modifying <a href="MIME.html">MIME</a> Types</h3>
+
+<p>The mime-types registry is loaded from a JSON file in <tt>data</tt>, but
+this file is not considered editable and cannot be compared in a pull
+request. New or modified <a href="MIME.html">MIME</a> types should be
+edited in the appropriate YAML file under <tt>type-lists</tt>. The format
+is as shown below for the <tt>application/xml</tt> <a
+href="MIME.html">MIME</a> type in <tt>type-lists/application.yml</tt>.</p>
+
+<pre>- !ruby/object:MIME::Type
+  content-type: application/xml
+  encoding: 8bit
+  extensions:
+  - xml
+  - xsl
+  references:
+  - IANA
+  - RFC3023
+  xrefs: !ruby/hash:MIME::Types::Container
+    rfc:
+    - rfc3023
+  registered: true</pre>
+
+<p>There are other fields that can be added, matching the fields discussed in
+the documentation for <a href="MIME/Type.html">MIME::Type</a>. Pull
+requests for <a href="MIME.html">MIME</a> types should just contain the
+changes to the YAML files for the new or modified <a
+href="MIME.html">MIME</a> types; I will convert the YAML files to JSON
+prior to a new release. I would rather not have to verify that the JSON
+matches the YAML changes, which is why it is not necessary to convert for
+the pull request.</p>
+
+<p>If you are making a change for a private fork, use <tt>rake
+convert:yaml:json</tt> to convert the YAML to JSON.</p>
+
+<h3>Test Dependencies</h3>
+
+<p>mime-types uses Ryan Davis’s <a
+href="https://github.com/seattlerb/hoe">Hoe</a> to manage the release
+process, and it adds a number of rake tasks. You will mostly be interested
+in:</p>
+
+<pre>$ rake</pre>
+
+<p>which runs the tests the same way that:</p>
+
+<pre>$ rake test
+$ rake travis</pre>
+
+<p>will do.</p>
+
+<p>To assist with the installation of the development dependencies for
+mime-types, I have provided the simplest possible Gemfile pointing to the
+(generated) <tt>mime-types.gemspec</tt> file. This will permit you to do:</p>
+
+<pre>$ bundle install</pre>
+
+<p>to get the development dependencies. If you aleady have <tt>hoe</tt>
+installed, you can accomplish the same thing with:</p>
+
+<pre>$ rake newb</pre>
+
+<p>This task will install any missing dependencies, run the tests/specs, and
+generate the RDoc.</p>
+
+<h3>Workflow</h3>
+
+<p>Here's the most direct way to get your work merged into the project:</p>
+<ul><li>
+<p>Fork the project.</p>
+</li><li>
+<p>Clone down your fork (<tt>git clone
+git://github.com/&lt;username&gt;/mime-types.git</tt>).</p>
+</li><li>
+<p>Create a topic branch to contain your change (<tt>git checkout -b
+my_awesome_feature</tt>).</p>
+</li><li>
+<p>Hack away, add tests. Not necessarily in that order.</p>
+</li><li>
+<p>Make sure everything still passes by running <tt>rake</tt>.</p>
+</li><li>
+<p>If necessary, rebase your commits into logical chunks, without errors.</p>
+</li><li>
+<p>Push the branch up (<tt>git push origin my_awesome_feature</tt>).</p>
+</li><li>
+<p>Create a pull request against halostatue/mime-types and describe what your
+change does and the why you think it should be merged.</p>
+</li></ul>
+
+<h3>Contributors</h3>
+<ul><li>
+<p>Austin Ziegler created mime-types.</p>
+</li></ul>
+
+<p>Thanks to everyone else who has contributed to mime-types:</p>
+<ul><li>
+<p>Andre Pankratz</p>
+</li><li>
+<p>Mauricio Linhares</p>
+</li><li>
+<p>Richard Hirner</p>
+</li><li>
+<p>Todd Carrico</p>
+</li><li>
+<p>Garret Alfert</p>
+</li><li>
+<p>Hans de Graaff</p>
+</li><li>
+<p>Henrik Hodne</p>
+</li><li>
+<p>Martin d'Allens</p>
+</li><li>
+<p>cgat</p>
+</li><li>
+<p>Greg Brockman</p>
+</li></ul>
+
+<h2>Licence</h2>
+
+<p>This software is available under three licences: the GNU GPL version 2 (or
+at your option, a later version), the Perl Artistic License, or the MIT
+License. Note that my preference for licensing is the MIT License, but the
+original Perl <a href="MIME/Types.html">MIME::Types</a> was dually
+originally licensed with the Perl Artistic Licence and the GNU GPL ("the
+same terms as Perl itself") and given that the Ruby implementation hewed
+pretty closely to the Perl version, I must maintain the additional
+licensing terms.</p>
+<ul><li>
+<p>Copyright 2003–2013 Austin Ziegler.</p>
+</li><li>
+<p>Adapted from <a href="MIME/Types.html">MIME::Types</a> (Perl) by Mark
+Overmeer.</p>
+</li></ul>
+
+<h3>MIT License</h3>
+
+<p>This software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<h3>Perl Artistic License (version 2)</h3>
+
+<p>See the file <a href="docs/artistic_txt.html">docs/artistic.txt</a> in the
+main distribution.</p>
+
+<h3>GNU GPL version 2</h3>
+
+<p>See the file <a href="docs/COPYING_txt.html">docs/COPYING.txt</a> in the
+main distribution.</p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

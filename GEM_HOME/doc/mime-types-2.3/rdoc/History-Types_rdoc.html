@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>File: History-Types.rdoc [mime-types-2.3 Documentation]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./Contributing_rdoc.html">Contributing.rdoc</a></li>
+        
+          <li class="file"><a href="./History-Types_rdoc.html">History-Types.rdoc</a></li>
+        
+          <li class="file"><a href="./History_rdoc.html">History.rdoc</a></li>
+        
+          <li class="file"><a href="./Licence_rdoc.html">Licence.rdoc</a></li>
+        
+          <li class="file"><a href="./Manifest_txt.html">Manifest.txt</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./docs/COPYING_txt.html">COPYING.txt</a></li>
+        
+          <li class="file"><a href="./docs/artistic_txt.html">artistic.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./MIME.html">MIME</a></li>
+        
+          <li><a href="./MIME/Type.html">MIME::Type</a></li>
+        
+          <li><a href="./MIME/Type/InvalidContentType.html">MIME::Type::InvalidContentType</a></li>
+        
+          <li><a href="./MIME/Type/InvalidEncoding.html">MIME::Type::InvalidEncoding</a></li>
+        
+          <li><a href="./MIME/Types.html">MIME::Types</a></li>
+        
+          <li><a href="./MIME/Types/Cache.html">MIME::Types::Cache</a></li>
+        
+          <li><a href="./MIME/Types/Loader.html">MIME::Types::Loader</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1><a href="MIME.html">MIME</a> Types Changes by Version</h1>
+
+<h2>2.3 / 2014-05-23</h2>
+<ul><li>
+<p>Updated the IANA media registry entries as of release date.</p>
+<ul><li>
+<p>Several <a href="MIME.html">MIME</a> types had additional metadata added on
+the most recent import.</p>
+</li><li>
+<p><a href="MIME/Type.html">MIME::Type</a> application/pidfxml was renamed to
+application/pidf+xml.</p>
+</li><li>
+<p>Added <a href="MIME.html">MIME</a> types:
+application/3gpdash-qoe-report+xml, application/alto-costmap+json,
+application/alto-costmapfilter+json, application/alto-directory+json,
+application/alto-endpointcost+json,
+application/alto-endpointcostparams+json,
+application/alto-endpointprop+json,
+application/alto-endpointpropparams+json, application/alto-error+json,
+application/alto-networkmap+json, application/alto-networkmapfilter+json,
+application/calendar+json, application/vnd.debian.binary-package,
+application/vnd.geo+json, application/vnd.ims.lis.v2.result+json,
+application/vnd.ims.lti.v2.toolconsumerprofile+json,
+application/vnd.ims.lti.v2.toolproxy+json,
+application/vnd.ims.lti.v2.toolproxy.id+json,
+application/vnd.ims.lti.v2.toolsettings+json,
+application/vnd.ims.lti.v2.toolsettings.simple+json,
+application/vnd.mason+json, application/vnd.miele+json,
+application/vnd.ms-3mfdocument, application/vnd.panoply,
+application/vnd.valve.source.material, application/vnd.yaoweme, audio/aptx,
+image/vnd.valve.source.texture, model/vnd.opengex,
+model/vnd.valve.source.compiled-map, model/x3d+fastinfoset,
+text/cache-manifest</p>
+</li></ul>
+</li></ul>
+
+<h2>2.2 / 2014-03-14</h2>
+<ul><li>
+<p>Added <tt>.sj</tt> to <tt>application/javascript</tt> as provided by
+Brandon Galbraith (@brandongalbraith) in <a
+href="https://github.com/halostatue/mime-types/pull/58">#58</a>.</p>
+</li><li>
+<p>Marked application/excel and application/x-excel as obsolete in favour of
+application/vnd.ms-excel per <a
+href="https://github.com/halostatue/mime-types/pull/60">#60</a>.</p>
+</li><li>
+<p>Merged duplicate <a href="MIME.html">MIME</a> types into the registered <a
+href="MIME.html">MIME</a> type. The only difference between the <a
+href="MIME.html">MIME</a> types was capitalization; the <a
+href="MIME.html">MIME</a> type registry is case-preserving.</p>
+<ul><li>
+<p>Affected <a href="MIME.html">MIME</a> types:
+application/vnd.3M.Post-it-Notes, application/vnd.FloGraphIt,
+application/vnd.HandHeld-Entertainment+xml, application/vnd.hp-HPGL,
+application/vnd.hp-PCL, application/vnd.hp-PCLXL,
+application/vnd.ibm.MiniPay, application/vnd.Kinar, application/vnd.MFER,
+application/vnd.Mobius.DAF, application/vnd.Mobius.DIS,
+application/vnd.Mobius.MBK, application/vnd.Mobius.MSL,
+application/vnd.Mobius.MQY, application/vnd.Mobius.PLC,
+application/vnd.Mobius.TXF, application/vnd.ms-excel.addin.macroEnabled.12,
+application/vnd.ms-excel.sheet.binary.macroEnabled.12,
+application/vnd.ms-excel.sheet.macroEnabled.12,
+application/vnd.ms-excel.template.macroEnabled.12,
+application/vnd.ms-powerpoint.addin.macroEnabled.12,
+application/vnd.ms-powerpoint.presentation.macroEnabled.12,
+application/vnd.ms-powerpoint.slide.macroEnabled.12,
+application/vnd.ms-powerpoint.slideshow.macroEnabled.12,
+application/vnd.ms-powerpoint.template.macroEnabled.12,
+application/vnd.ms-word.document.macroEnabled.12,
+application/vnd.ms-word.template.macroEnabled.12,
+application/vnd.novadigm.EDM, application/vnd.novadigm.EDX,
+application/vnd.novadigm.EXT, application/vnd.Quark.QuarkXPress,
+application/vnd.SimTech-MindMapper, audio/AMR-WB, video/H261, video/H263,
+video/H264, video/JPEG, video/MJ2.</p>
+</li></ul>
+</li><li>
+<p>Updated the IANA media registry entries as of release date.</p>
+<ul><li>
+<p>Registered type person names have been updated from surname only to full
+name.</p>
+</li><li>
+<p>Several types had updated RFC or draft RFC references.</p>
+</li><li>
+<p>Added application/bacnet-xdd+zip, application/cms,
+application/load-control+xml, application/PDX, application/ttml+xml,
+application/vnd.collection.doc+json,
+application/vnd.iptc.g2.catalogitem+xml, application/vnd.pcos,
+text/parameters, text/vnd.a, video/iso.segment</p>
+</li></ul>
+</li></ul>
+
+<h2>2.1 / 2014-01-25</h2>
+<ul><li>
+<p>The IANA media type registry format changed, resulting in updates to most
+of the 1,427 registered <a href="MIME.html">MIME</a> types.</p>
+<ul><li>
+<p>Many registered <a href="MIME.html">MIME</a> types have had some metadata
+updates due to the change in the IANA registry format.</p>
+<ul><li>
+<p><a href="MIME.html">MIME</a> types having a publicly available registry
+application now include a link to that file in references.</p>
+</li><li>
+<p>Added <tt>xrefs</tt> data as discovered (see the API changes noted above).</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>The Apache mime types configuration has been added to track additional
+common but unregistered <a href="MIME.html">MIME</a> types and known
+extensions for those <a href="MIME.html">MIME</a> types. This has affected
+many of the available <a href="MIME.html">MIME</a> types.</p>
+</li><li>
+<p>Added newly registered <a href="MIME.html">MIME</a> types:</p>
+<ul><li>
+<p>application/emotionml+xml</p>
+</li><li>
+<p>application/ODX</p>
+</li><li>
+<p>application/prs.hpub+zip</p>
+</li><li>
+<p>application/vcard+json</p>
+</li><li>
+<p>application/vnd.bekitzur-stech+json</p>
+</li><li>
+<p>application/vnd.etsi.timestamp-token</p>
+</li><li>
+<p>application/vnd.oma.cab-feature-handler+xml</p>
+</li><li>
+<p>application/vnd.openeye.oeb</p>
+</li><li>
+<p>application/vnd.tcpdump.pcap</p>
+</li><li>
+<p>audio/amr-wb</p>
+</li><li>
+<p>model/x3d+xml</p>
+</li><li>
+<p>model/x3d-vrml</p>
+</li></ul>
+</li><li>
+<p>Added 180 unregistered <a href="MIME.html">MIME</a> types from the Apache
+list:</p>
+<ul><li>
+<p>application/applixware</p>
+</li><li>
+<p>application/cu-seeme</p>
+</li><li>
+<p>application/docbook+xml</p>
+</li><li>
+<p>application/gml+xml</p>
+</li><li>
+<p>application/gpx+xml</p>
+</li><li>
+<p>application/gxf</p>
+</li><li>
+<p>application/java-archive</p>
+</li><li>
+<p>application/java-serialized-object</p>
+</li><li>
+<p>application/java-vm</p>
+</li><li>
+<p>application/jsonml+json</p>
+</li><li>
+<p>application/metalink+xml</p>
+</li><li>
+<p>application/omdoc+xml</p>
+</li><li>
+<p>application/onenote</p>
+</li><li>
+<p>application/pics-rules</p>
+</li><li>
+<p>application/rsd+xml</p>
+</li><li>
+<p>application/ssdl+xml</p>
+</li><li>
+<p>application/vnd.3m.post-it-notes</p>
+</li><li>
+<p>application/vnd.amazon.ebook</p>
+</li><li>
+<p>application/vnd.anser-web-funds-transfer-initiation</p>
+</li><li>
+<p>application/vnd.curl.car</p>
+</li><li>
+<p>application/vnd.curl.pcurl</p>
+</li><li>
+<p>application/vnd.dolby.mlp</p>
+</li><li>
+<p>application/vnd.ds-keypoint</p>
+</li><li>
+<p>application/vnd.flographit</p>
+</li><li>
+<p>application/vnd.handheld-entertainment+xml</p>
+</li><li>
+<p>application/vnd.hp-hpgl</p>
+</li><li>
+<p>application/vnd.hp-pcl</p>
+</li><li>
+<p>application/vnd.hp-pclxl</p>
+</li><li>
+<p>application/vnd.ibm.minipay</p>
+</li><li>
+<p>application/vnd.kinar</p>
+</li><li>
+<p>application/vnd.mfer</p>
+</li><li>
+<p>application/vnd.mobius.daf</p>
+</li><li>
+<p>application/vnd.mobius.dis</p>
+</li><li>
+<p>application/vnd.mobius.mbk</p>
+</li><li>
+<p>application/vnd.mobius.mqy</p>
+</li><li>
+<p>application/vnd.mobius.msl</p>
+</li><li>
+<p>application/vnd.mobius.plc</p>
+</li><li>
+<p>application/vnd.mobius.txf</p>
+</li><li>
+<p>application/vnd.ms-excel.addin.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-excel.sheet.binary.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-excel.sheet.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-excel.template.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-pki.seccat</p>
+</li><li>
+<p>application/vnd.ms-pki.stl</p>
+</li><li>
+<p>application/vnd.ms-powerpoint.addin.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-powerpoint.presentation.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-powerpoint.slide.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-powerpoint.slideshow.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-powerpoint.template.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-word.document.macroenabled.12</p>
+</li><li>
+<p>application/vnd.ms-word.template.macroenabled.12</p>
+</li><li>
+<p>application/vnd.novadigm.edm</p>
+</li><li>
+<p>application/vnd.novadigm.edx</p>
+</li><li>
+<p>application/vnd.novadigm.ext</p>
+</li><li>
+<p>application/vnd.quark.quarkxpress</p>
+</li><li>
+<p>application/vnd.rim.cod</p>
+</li><li>
+<p>application/vnd.rn-realmedia-vbr</p>
+</li><li>
+<p>application/vnd.simtech-mindmapper</p>
+</li><li>
+<p>application/vnd.symbian.install</p>
+</li><li>
+<p>application/winhlp</p>
+</li><li>
+<p>application/x-abiword</p>
+</li><li>
+<p>application/x-ace-compressed</p>
+</li><li>
+<p>application/x-authorware-bin</p>
+</li><li>
+<p>application/x-authorware-map</p>
+</li><li>
+<p>application/x-authorware-seg</p>
+</li><li>
+<p>application/x-bittorrent</p>
+</li><li>
+<p>application/x-blorb</p>
+</li><li>
+<p>application/x-bzip</p>
+</li><li>
+<p>application/x-cbr</p>
+</li><li>
+<p>application/x-cfs-compressed</p>
+</li><li>
+<p>application/x-chat</p>
+</li><li>
+<p>application/x-conference</p>
+</li><li>
+<p>application/x-dgc-compressed</p>
+</li><li>
+<p>application/x-doom</p>
+</li><li>
+<p>application/x-dtbncx+xml</p>
+</li><li>
+<p>application/x-dtbook+xml</p>
+</li><li>
+<p>application/x-dtbresource+xml</p>
+</li><li>
+<p>application/x-envoy</p>
+</li><li>
+<p>application/x-eva</p>
+</li><li>
+<p>application/x-font-bdf</p>
+</li><li>
+<p>application/x-font-ghostscript</p>
+</li><li>
+<p>application/x-font-linux-psf</p>
+</li><li>
+<p>application/x-font-otf</p>
+</li><li>
+<p>application/x-font-pcf</p>
+</li><li>
+<p>application/x-font-snf</p>
+</li><li>
+<p>application/x-font-ttf</p>
+</li><li>
+<p>application/x-font-type1</p>
+</li><li>
+<p>application/x-freearc</p>
+</li><li>
+<p>application/x-gca-compressed</p>
+</li><li>
+<p>application/x-glulx</p>
+</li><li>
+<p>application/x-gnumeric</p>
+</li><li>
+<p>application/x-gramps-xml</p>
+</li><li>
+<p>application/x-install-instructions</p>
+</li><li>
+<p>application/x-iso9660-image</p>
+</li><li>
+<p>application/x-lzh-compressed</p>
+</li><li>
+<p>application/x-mie</p>
+</li><li>
+<p>application/x-ms-application</p>
+</li><li>
+<p>application/x-ms-shortcut</p>
+</li><li>
+<p>application/x-ms-xbap</p>
+</li><li>
+<p>application/x-msbinder</p>
+</li><li>
+<p>application/x-mscardfile</p>
+</li><li>
+<p>application/x-msclip</p>
+</li><li>
+<p>application/x-msmediaview</p>
+</li><li>
+<p>application/x-msmetafile</p>
+</li><li>
+<p>application/x-msmoney</p>
+</li><li>
+<p>application/x-mspublisher</p>
+</li><li>
+<p>application/x-msschedule</p>
+</li><li>
+<p>application/x-msterminal</p>
+</li><li>
+<p>application/x-mswrite</p>
+</li><li>
+<p>application/x-nzb</p>
+</li><li>
+<p>application/x-pkcs12</p>
+</li><li>
+<p>application/x-pkcs7-certificates</p>
+</li><li>
+<p>application/x-pkcs7-certreqresp</p>
+</li><li>
+<p>application/x-research-info-systems</p>
+</li><li>
+<p>application/x-silverlight-app</p>
+</li><li>
+<p>application/x-sql</p>
+</li><li>
+<p>application/x-stuffitx</p>
+</li><li>
+<p>application/x-subrip</p>
+</li><li>
+<p>application/x-t3vm-image</p>
+</li><li>
+<p>application/x-tads</p>
+</li><li>
+<p>application/x-tex-tfm</p>
+</li><li>
+<p>application/x-tgif</p>
+</li><li>
+<p>application/x-xfig</p>
+</li><li>
+<p>application/x-xliff+xml</p>
+</li><li>
+<p>application/x-xz</p>
+</li><li>
+<p>application/x-zmachine</p>
+</li><li>
+<p>application/xaml+xml</p>
+</li><li>
+<p>application/xproc+xml</p>
+</li><li>
+<p>application/xspf+xml</p>
+</li><li>
+<p>audio/adpcm</p>
+</li><li>
+<p>audio/amr-wb</p>
+</li><li>
+<p>audio/AMR-WB</p>
+</li><li>
+<p>audio/midi</p>
+</li><li>
+<p>audio/s3m</p>
+</li><li>
+<p>audio/silk</p>
+</li><li>
+<p>audio/x-caf</p>
+</li><li>
+<p>audio/x-flac</p>
+</li><li>
+<p>audio/x-matroska</p>
+</li><li>
+<p>audio/x-mpegurl</p>
+</li><li>
+<p>audio/xm</p>
+</li><li>
+<p>chemical/x-cdx</p>
+</li><li>
+<p>chemical/x-cif</p>
+</li><li>
+<p>chemical/x-cmdf</p>
+</li><li>
+<p>chemical/x-cml</p>
+</li><li>
+<p>chemical/x-csml</p>
+</li><li>
+<p>image/sgi</p>
+</li><li>
+<p>image/vnd.ms-photo</p>
+</li><li>
+<p>image/x-3ds</p>
+</li><li>
+<p>image/x-cmx</p>
+</li><li>
+<p>image/x-freehand</p>
+</li><li>
+<p>image/x-icon</p>
+</li><li>
+<p>image/x-mrsid-image</p>
+</li><li>
+<p>image/x-pcx</p>
+</li><li>
+<p>image/x-tga</p>
+</li><li>
+<p>model/x3d+binary</p>
+</li><li>
+<p>model/x3d+vrml</p>
+</li><li>
+<p>text/plain</p>
+</li><li>
+<p>text/vnd.curl.dcurl</p>
+</li><li>
+<p>text/vnd.curl.mcurl</p>
+</li><li>
+<p>text/vnd.curl.scurl</p>
+</li><li>
+<p>text/x-asm</p>
+</li><li>
+<p>text/x-c</p>
+</li><li>
+<p>text/x-fortran</p>
+</li><li>
+<p>text/x-java-source</p>
+</li><li>
+<p>text/x-nfo</p>
+</li><li>
+<p>text/x-opml</p>
+</li><li>
+<p>text/x-pascal</p>
+</li><li>
+<p>text/x-sfv</p>
+</li><li>
+<p>text/x-uuencode</p>
+</li><li>
+<p>video/h261</p>
+</li><li>
+<p>video/h263</p>
+</li><li>
+<p>video/h264</p>
+</li><li>
+<p>video/jpeg</p>
+</li><li>
+<p>video/jpm</p>
+</li><li>
+<p>video/mj2</p>
+</li><li>
+<p>video/x-f4v</p>
+</li><li>
+<p>video/x-m4v</p>
+</li><li>
+<p>video/x-mng</p>
+</li><li>
+<p>video/x-ms-vob</p>
+</li><li>
+<p>video/x-smv</p>
+</li></ul>
+</li><li>
+<p>Merged the non-standard VMS platform text/plain with the standard
+text/plain.</p>
+</li></ul>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

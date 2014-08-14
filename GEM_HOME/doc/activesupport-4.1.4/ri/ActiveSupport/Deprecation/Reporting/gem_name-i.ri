@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"gem_name:EFI"3ActiveSupport::Deprecation::Reporting#gem_name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"+Name of gem where method is deprecated;T:
+@file0FI"0lib/active_support/deprecation/reporting.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"max_nesting:EFI"-JSON::Pure::Generator::State#max_nesting;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThis integer returns the maximum level of data structure nesting in:encoding"IBM437I"Bthe generated JSON, max_nesting = 0 if no maximum is checked.;@:
+@file0FI"lib/json/pure/generator.rb;@

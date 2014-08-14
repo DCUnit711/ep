@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Type
+      %th
+  %tbody
+    - @inventory_types.each do |inventory_type|
+      %tr
+        %td= inventory_type.inv_type
+        %td
+          = link_to edit_inventory_type_path(inventory_type), class: 'btn-sm' do
+            %i.glyphicon.glyphicon-pencil
+          = link_to inventory_type, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn-sm' do
+            %i.glyphicon.glyphicon-trash

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>mime-types-1.25.1 Documentation</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>mime-types-1.25.1 Documentation</h1>
+
+  
+  <div id="main">
+    
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>home </p></td>
+<td>
+<p><a href="http://mime-types.rubyforge.org/">mime-types.rubyforge.org/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>code </p></td>
+<td>
+<p><a
+href="https://github.com/halostatue/mime-types/">github.com/halostatue/mime-types/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>bugs </p></td>
+<td>
+<p><a
+href="https://github.com/halostatue/mime-types/issues">github.com/halostatue/mime-types/issues</a></p>
+</td></tr><tr><td class="rdoc-term"><p>rdoc </p></td>
+<td>
+<p><a href="http://mime-types.rubyforge.org/">mime-types.rubyforge.org/</a></p>
+</td></tr><tr><td class="rdoc-term"><p>code climate </p></td>
+<td>
+<p><a href="https://codeclimate.com/github/halostatue/mime-types"><img
+src="https://codeclimate.com/github/halostatue/mime-types.png" /></a></p>
+</td></tr><tr><td class="rdoc-term"><p>continuous integration </p></td>
+<td>
+<p><a href="https://travis-ci.org/halostatue/mime-types"><img
+src="https://travis-ci.org/halostatue/mime-types.png" /></a></p>
+</td></tr></table>
+
+<h2>Description</h2>
+
+<p>This library allows for the identification of a file's likely <a
+href="MIME.html">MIME</a> content type. This is release 1.25.1, fixing an
+issue with priority comparison for mime-types 1.x. The current release is
+2.0, which only supports Ruby 1.9 or later.</p>
+
+<p>Release 1.25.1 contains all features of 1.25, including the experimental
+caching and lazy loading functionality. The caching and lazy loading
+features were initially implemented by Greg Brockman (gdb). As these
+features are experimental, they are disabled by default and must be enabled
+through the use of environment variables. The cache is invalidated on a
+per-version basis; the cache for version 1.25 will not be reused for any
+later version.</p>
+
+<p>To use lazy loading, set the environment variable
+<tt>RUBY_MIME_TYPES_LAZY_LOAD</tt> to any value other than 'false'. When
+using lazy loading, the initial startup of <a
+href="MIME/Types.html">MIME::Types</a> is around 12–25× faster than
+normal startup (on my system, normal startup is about 90 ms; lazy startup
+is about 4 ms). This isn't generally useful, however, as the <a
+href="MIME/Types.html">MIME::Types</a> database has not been loaded. Lazy
+startup and load is just <b>slightly</b> faster—around 1 ms. The real
+advantage comes from using the cache.</p>
+
+<p>To enable the cache, set the environment variable
+<tt>RUBY_MIME_TYPES_CACHE</tt> to a filename where <a
+href="MIME/Types.html">MIME::Types</a> will have read-write access. The
+first time a new version of <a href="MIME/Types.html">MIME::Types</a> is
+run using this file, it will be created, taking a little longer than
+normal. Subsequent loads using the same cache file will be approximately
+3½× faster (25 ms) than normal loads. This can be combined with
+<tt>RUBY_MIME_TYPES_LAZY_LOAD</tt>, but this is <b>not</b> recommended in a
+multithreaded or multiprocess environment where all threads or processes
+will be using the same cache file.</p>
+
+<p>As the caching interface is still experimental, the only values cached are
+the default <a href="MIME/Types.html">MIME::Types</a> database, not any
+custom <a href="MIME/Types.html">MIME::Types</a> added by users.</p>
+
+<p><a href="MIME.html">MIME</a> types are used in MIME-compliant
+communications, as in e-mail or HTTP traffic, to indicate the type of
+content which is transmitted. <a href="MIME/Types.html">MIME::Types</a>
+provides the ability for detailed information about <a
+href="MIME.html">MIME</a> entities (provided as a set of <a
+href="MIME/Type.html">MIME::Type</a> objects) to be determined and used
+programmatically. There are many types defined by RFCs and vendors, so the
+list is long but not complete; don't hesitate to ask to add additional
+information. This library follows the IANA collection of <a
+href="MIME.html">MIME</a> types (see below for reference).</p>
+
+<p><a href="MIME/Types.html">MIME::Types</a> for Ruby was originally based on
+<a href="MIME/Types.html">MIME::Types</a> for Perl by Mark Overmeer,
+copyright 2001 - 2009.</p>
+
+<p><a href="MIME/Types.html">MIME::Types</a> is built to conform to the <a
+href="MIME.html">MIME</a> types of RFCs 2045 and 2231. It tracks the <a
+href="http://www.iana.org/assignments/media-types/">IANA registry</a> (<a
+href="ftp://ftp.iana.org/assignments/media-types">ftp</a>) with some
+unofficial types added from the <a
+href="http://www.ltsw.se/knbase/internet/mime.htp">LTSW collection</a> and
+added by the users of <a href="MIME/Types.html">MIME::Types</a>.</p>
+
+<h2>Synopsis</h2>
+
+<p><a href="MIME.html">MIME</a> types are used in <a href="MIME.html">MIME</a>
+entities, as in email or HTTP traffic. It is useful at times to have
+information available about <a href="MIME.html">MIME</a> types (or,
+inversely, about files). A <a href="MIME/Type.html">MIME::Type</a> stores
+the known information about one <a href="MIME.html">MIME</a> type.</p>
+
+<pre>require 'mime/types'
+
+plaintext = MIME::Types['text/plain']
+# returns [text/plain, text/plain]
+text      = plaintext.first
+puts text.media_type            # =&gt; 'text'
+puts text.sub_type              # =&gt; 'plain'
+
+puts text.extensions.join(&quot; &quot;)  # =&gt; 'txt asc c cc h hh cpp hpp dat hlp'
+
+puts text.encoding              # =&gt; quoted-printable
+puts text.binary?               # =&gt; false
+puts text.ascii?                # =&gt; true
+puts text.obsolete?             # =&gt; false
+puts text.registered?           # =&gt; true
+puts text == 'text/plain'       # =&gt; true
+puts MIME::Type.simplified('x-appl/x-zip')
+                                # =&gt; 'appl/zip'
+
+puts MIME::Types.any? { |type|
+  type.content_type == 'text/plain'
+}                               # =&gt; true
+puts MIME::Types.all?(&amp;:registered?)
+                                # =&gt; false</pre>
+
+<h2>Contributing</h2>
+
+<p>I value any contribution to <a href="MIME/Types.html">MIME::Types</a> you
+can provide: a bug report, a feature request, or code contributions.</p>
+
+<p>Code contributions to <a href="MIME/Types.html">MIME::Types</a> are
+especially &lt;del&gt;welcome&lt;/del&gt;encouraged. Because <a
+href="MIME/Types.html">MIME::Types</a> is a complex codebase, there are a
+few guidelines:</p>
+<ul><li>
+<p>Changes (aside from new <a href="MIME.html">MIME</a> types)
+&lt;strong&gt;will not&lt;/strong&gt; be accepted without tests. The test
+suite is written with MiniTest.</p>
+</li><li>
+<p>Match my coding style.</p>
+</li><li>
+<p>Use a thoughtfully-named topic branch that contains your change. Rebase
+your commits into logical chunks as necessary.</p>
+</li><li>
+<p>Use <a
+href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">quality
+commit messages</a>.</p>
+</li><li>
+<p>Do not change the version number; when your patch is accepted and a release
+is made, the version will be updated at that point.</p>
+</li><li>
+<p>Submit a GitHub pull request with your changes.</p>
+</li><li>
+<p>New features require new documentation.</p>
+</li></ul>
+
+<h3>Test Dependencies</h3>
+
+<p>To run the test suite, you will need to install the development
+dependencies for <a href="MIME/Types.html">MIME::Types</a>. If you have
+Bundler, you can accomplish this easily:</p>
+
+<pre>$ bundle install</pre>
+
+<p><a href="MIME/Types.html">MIME::Types</a> uses Ryan Davis’s excellent <a
+href="https://github.com/seattlerb/hoe">Hoe</a> to manage the release
+process, and it adds a number of rake tasks. You will mostly be interested
+in:</p>
+
+<pre>$ rake</pre>
+
+<p>which runs the tests the same way that:</p>
+
+<pre>$ rake test
+$ rake travis</pre>
+
+<p>will do.</p>
+
+<h3>Workflow</h3>
+
+<p>Here's the most direct way to get your work merged into the project:</p>
+<ul><li>
+<p>Fork the project.</p>
+</li><li>
+<p>Clone down your fork (+git clone
+git://github.com/&lt;username&gt;/mime-types.git+).</p>
+</li><li>
+<p>Create a topic branch to contain your change (+git checkout -b
+my_awesome_feature+).</p>
+</li><li>
+<p>Hack away, add tests. Not necessarily in that order.</p>
+</li><li>
+<p>Make sure everything still passes by running `rake`.</p>
+</li><li>
+<p>If necessary, rebase your commits into logical chunks, without errors.</p>
+</li><li>
+<p>Push the branch up (+git push origin my_awesome_feature+).</p>
+</li><li>
+<p>Create a pull request against halostatue/mime-types and describe what your
+change does and the why you think it should be merged.</p>
+</li></ul>
+
+<h3>Contributors</h3>
+<ul><li>
+<p>Austin Ziegler created <a href="MIME/Types.html">MIME::Types</a>.</p>
+</li></ul>
+
+<p>Thanks to everyone else who has contributed to MIME::Types:</p>
+<ul><li>
+<p>Andre Pankratz</p>
+</li><li>
+<p>Mauricio Linhares</p>
+</li><li>
+<p>Richard Hirner</p>
+</li><li>
+<p>Todd Carrico</p>
+</li><li>
+<p>Garret Alfert</p>
+</li><li>
+<p>Hans de Graaff</p>
+</li><li>
+<p>Henrik Hodne</p>
+</li><li>
+<p>Martin d'Allens</p>
+</li><li>
+<p>cgat</p>
+</li><li>
+<p>Greg Brockman</p>
+</li></ul>
+
+<h2>Licence</h2>
+
+<p>This software is available under three licenses: the GNU GPL version 2 (or
+at your option, a later version), the Perl Artistic license, or the MIT
+license. Note that my preference for licensing is the MIT license, but the
+original Perl <a href="MIME/Types.html">MIME::Types</a> was dually
+originally licensed with the Perl Artistic and the GNU GPL ("the same terms
+as Perl itself") and given that the Ruby implementation hewed pretty
+closely to the Perl version, I must maintain the additional licensing
+terms.</p>
+<ul><li>
+<p>Copyright 2003–2013 Austin Ziegler.</p>
+</li><li>
+<p>Adapted from <a href="MIME/Types.html">MIME::Types</a> (Perl) by Mark
+Overmeer.</p>
+</li></ul>
+
+<h3>MIT License</h3>
+
+<p>this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<h3>Perl Artistic License (version 2)</h3>
+
+<p>See the file <a href="docs/artistic_txt.html">docs/artistic.txt</a> in the
+main distribution.</p>
+
+<h3>GNU GPL version 2</h3>
+
+<p>See the file <a href="docs/COPYING_txt.html">docs/COPYING.txt</a> in the
+main distribution.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="Contributing_rdoc.html">Contributing.rdoc</a></li>
+    
+      <li class="file"><a href="History_rdoc.html">History.rdoc</a></li>
+    
+      <li class="file"><a href="Licence_rdoc.html">Licence.rdoc</a></li>
+    
+      <li class="file"><a href="Manifest_txt.html">Manifest.txt</a></li>
+    
+      <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+    
+      <li class="file"><a href="docs/COPYING_txt.html">COPYING.txt</a></li>
+    
+      <li class="file"><a href="docs/artistic_txt.html">artistic.txt</a></li>
+    
+      <li class="file"><a href="lib/mime/types/application.html">application</a></li>
+    
+      <li class="file"><a href="lib/mime/types/audio.html">audio</a></li>
+    
+      <li class="file"><a href="lib/mime/types/image.html">image</a></li>
+    
+      <li class="file"><a href="lib/mime/types/message.html">message</a></li>
+    
+      <li class="file"><a href="lib/mime/types/model.html">model</a></li>
+    
+      <li class="file"><a href="lib/mime/types/multipart.html">multipart</a></li>
+    
+      <li class="file"><a href="lib/mime/types/text.html">text</a></li>
+    
+      <li class="file"><a href="lib/mime/types/video.html">video</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="MIME.html">MIME</a></li>
+    
+    <li class="class"><a href="MIME/InvalidContentType.html">MIME::InvalidContentType</a></li>
+    
+    <li class="class"><a href="MIME/Type.html">MIME::Type</a></li>
+    
+    <li class="class"><a href="MIME/Types.html">MIME::Types</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="MIME/Type.html#method-c-from_array">::from_array &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-c-from_hash">::from_hash &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-c-from_mime_type">::from_mime_type &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-c-new">::new &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-c-new">::new &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-c-simplified">::simplified &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-3C-3D-3E">#<=> &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-5B-5D">#[] &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-add">#add &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-ascii-3F">#ascii? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-binary-3F">#binary? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-complete-3F">#complete? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-count">#count &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-docs-3D">#docs= &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-each">#each &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-eql-3F">#eql? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-like-3F">#like? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-obsolete-3F">#obsolete? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-of">#of &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-platform-3F">#platform? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-priority_compare">#priority_compare &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-registered-3F">#registered? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-signature-3F">#signature? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-system-3F">#system? &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-to_a">#to_a &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-to_hash">#to_hash &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-to_s">#to_s &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-to_str">#to_str &mdash; MIME::Type</a></li>
+    
+      <li><a href="MIME/Types.html#method-i-type_for">#type_for &mdash; MIME::Types</a></li>
+    
+      <li><a href="MIME/Type.html#method-i-urls">#urls &mdash; MIME::Type</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>

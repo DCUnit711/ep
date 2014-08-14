@@ -1,0 +1,15 @@
+.row
+  .col-sm-2
+    .btn-group
+      = link_to admin_index_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_copy_center_path(@copy_center), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+%hr
+.row
+  .col-md-4
+    = render 'copy_center_info'
+  .col-md-4
+    = render 'print_station_info'
+  .col-md-4
+    = render 'employee_info'

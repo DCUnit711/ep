@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"std_offset:EFI"&TZInfo::TimezoneOffset#std_offset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe offset from standard time for the zone in seconds (i.e. non-zero if :encoding"IBM437I")daylight savings is being observed).;@:
+@file0FI""lib/tzinfo/timezone_offset.rb;@

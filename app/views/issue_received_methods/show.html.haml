@@ -1,0 +1,15 @@
+.row
+  .col-lg-12
+    .btn-group
+      = link_to issue_received_methods_path, class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-arrow-left
+      = link_to edit_issue_received_method_path(@issue_received_method), class: 'btn btn-sm btn-default' do
+        %i.glyphicon.glyphicon-pencil
+  .col-lg-3
+    .panel.panel-primary
+      .panel-heading
+        %h4 Printer Info
+      .panel-body
+        %p
+          %strong Method:
+          = @issue_received_method.method

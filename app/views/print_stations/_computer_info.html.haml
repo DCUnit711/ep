@@ -1,0 +1,19 @@
+.panel.panel-info
+  .panel-heading
+    %h4 Computer
+  - if @print_station.computer
+    %table.table.table-condensed.table-striped.table-hover
+      %tbody{style: 'font-size:14px'}
+        %tr
+          %th Service Tag:
+          %td= link_to @print_station.computer.service_tag, computer_path(@print_station.computer) unless @print_station.computer.nil?
+        %tr
+          %th Image:
+          - if @print_station.computer.computer_image
+            %td= @print_station.computer.computer_image.image
+          - else
+            %td
+              %strong Needs to be added
+  - else
+    .well.well-sm
+      %strong No computer associated with #{ @print_station.location }

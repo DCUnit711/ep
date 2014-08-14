@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"content_type:EFI"4ActionDispatch::Http::UploadedFile#content_type;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-A string with the MIME type of the file.:encoding"IBM437:
+@file0FI"'lib/action_dispatch/http/upload.rb;@
